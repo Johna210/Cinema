@@ -3,10 +3,10 @@ POST http://localhost:3000/users/signup
 Content-Type: application/json
 
 {
-    "email" : "test@test.com",
-    "fullname": "test tester",
-    "username": "testing",
-    "password": "test123"
+    "email" : "newtest@newtest.com",
+    "fullname": "new tester",
+    "username": "newTester",
+    "password": "newTester"
 
 }
 
@@ -15,9 +15,15 @@ POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-    "email" : "test@test.com",
-    "password": "test123"
+    "email" : "newtest@newtest.com",
+    "password": "newTester"
 }
+
+### Get the currently signed in user
+GET http://localhost:3000/users/whoami
+
+### Sign out 
+POST  http://localhost:3000/users/signout
 
 ### Find a particular user with a given id
 GET http://localhost:3000/users/1
