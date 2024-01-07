@@ -24,6 +24,9 @@ export class Cinema {
   @Column()
   description: string;
 
+  @Column()
+  imagePath: string;
+
   @AfterInsert()
   logInsert() {
     console.log('Inserted User with id', this.id);

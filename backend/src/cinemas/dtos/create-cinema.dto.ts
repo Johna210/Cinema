@@ -1,4 +1,4 @@
-import { IsEmail, IsString } from 'class-validator';
+import { IsEmail, IsOptional, IsString } from 'class-validator';
 
 export class CreateCinemaDto {
   @IsEmail()
@@ -12,4 +12,8 @@ export class CreateCinemaDto {
 
   @IsString()
   password: string;
+
+  @IsString()
+  @IsOptional()
+  imagePath: string;
 }
