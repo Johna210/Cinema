@@ -1,0 +1,10 @@
+### Create Cinema / signup
+POST http://localhost:3000/cinemas/signup
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "cinemaName": "NewCinema",
+    "password": "1234",
+    "description": "New Cinema has arrived."
+}

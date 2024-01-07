@@ -6,13 +6,14 @@ import { UsersModule } from './users/users.module';
 import { CinemasModule } from './cinemas/cinemas.module';
 import { MoviesModule } from './movies/movies.module';
 import { User } from './users/user.entity';
+import { Cinema } from './cinemas/cinema.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'cinema.sqlite',
-      entities: [User],
+      entities: [User, Cinema],
       synchronize: true,
     }),
     UsersModule,
