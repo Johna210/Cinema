@@ -1,16 +1,70 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
-
+import { UserauthService } from '../auth/userauth/userauth.service';
 @Injectable()
 export class UsersService {
-  constructor(@InjectRepository(User) private repo: Repository<User>) {}
+  constructor(
+    @InjectRepository(User) private repo: Repository<User>,
+    private authService: UserauthService,
+  ) {}
 
-  create(fullname: string, email: string, username: string, password: string) {
-    const user = this.repo.create({ fullname, email, username, password });
+  async create(
+    fullname: string,
+    email: string,
+    username: string,
+    password: string,
+  ) {
+    const users = await this.findEmail(email);
+    console.log(users);
+    if (users.length > 0) {
+      throw new BadRequestException('email already taken!');
+    }
+
+    const usernames = await this.findUsername(username);
+    if (usernames.length > 0) {
+      throw new BadRequestException('username already taken');
+    }
+
+    const hashedPassword = await this.authService.hashPassword(password);
+    console.log(hashedPassword);
+    const user = this.repo.create({
+      fullname,
+      email,
+      username,
+      password: hashedPassword,
+    });
 
     return this.repo.save(user);
+  }
+
+  async login(email: string, password: string) {
+    const user = await this.findUserByEmail(email);
+    // console.log(user);
+
+    if (!user) {
+      throw new BadRequestException('user not found');
+    }
+
+    const match = await this.authService.comparePasswords(
+      password,
+      user.password,
+    );
+    console.log(match);
+
+    if (!match) {
+      throw new BadRequestException('Incorrect password');
+    }
+
+    const token = this.authService.generateJwt(user);
+    // console.log(token);
+
+    return token;
   }
 
   async findOne(id: number) {
@@ -23,6 +77,10 @@ export class UsersService {
     });
 
     return user;
+  }
+
+  async findUserByEmail(email: string) {
+    return this.repo.findOne({ where: { email: email } });
   }
 
   async findEmail(email: string) {

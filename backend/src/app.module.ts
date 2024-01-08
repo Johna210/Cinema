@@ -7,6 +7,7 @@ import { CinemasModule } from './cinemas/cinemas.module';
 import { MoviesModule } from './movies/movies.module';
 import { User } from './users/user.entity';
 import { Cinema } from './cinemas/cinema.entity';
+import { UserauthModule } from './auth/userauth/userauth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { Cinema } from './cinemas/cinema.entity';
     UsersModule,
     CinemasModule,
     MoviesModule,
+    UserauthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
