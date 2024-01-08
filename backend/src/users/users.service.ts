@@ -121,4 +121,26 @@ export class UsersService {
 
     return this.repo.remove(user);
   }
+
+  async changePassword(
+    id: number,
+    currentPassword: string,
+    newPassword: string,
+  ) {
+    const user = await this.findOne(id);
+
+    if (!user) {
+      throw new NotFoundException('user not found');
+    }
+
+    if (!this.authService.comparePasswords(currentPassword, user.password)) {
+      throw new BadRequestException('Incorrect password');
+    }
+
+    const newPasswordHash = await this.authService.hashPassword(newPassword);
+
+    user.password = newPasswordHash;
+
+    return this.repo.save(user);
+  }
 }

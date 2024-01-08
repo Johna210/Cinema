@@ -17,6 +17,7 @@ import { UsersService } from './users.service';
 import { Serialize } from '../Interceptors/serialize.iterceptor';
 import { UserDto } from './dtos/user.dto';
 import { signinUserDto } from './dtos/signin-user.dto';
+import { UpdatePasswordDto } from './dtos/update-password.dto';
 import { JwtAuthGuard } from 'src/auth/userauth/guards/jwt-userAuth.guard';
 
 @Serialize(UserDto)
@@ -75,5 +76,17 @@ export class UsersController {
   updateUser(@Request() req, @Body() body: UpdateUserDto) {
     const user = req.user;
     return this.usersService.update(parseInt(user.sub), body);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch('/changePass')
+  updatePassword(@Request() req, @Body() body: UpdatePasswordDto) {
+    const user = req.user;
+
+    return this.usersService.changePassword(
+      user.sub,
+      body.currentPassword,
+      body.newPassword,
+    );
   }
 }
