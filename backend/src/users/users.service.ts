@@ -21,7 +21,6 @@ export class UsersService {
     password: string,
   ) {
     const users = await this.findEmail(email);
-    console.log(users);
     if (users.length > 0) {
       throw new BadRequestException('email already taken!');
     }
@@ -45,7 +44,6 @@ export class UsersService {
 
   async login(email: string, password: string) {
     const user = await this.findUserByEmail(email);
-    // console.log(user);
 
     if (!user) {
       throw new BadRequestException('user not found');
@@ -62,7 +60,6 @@ export class UsersService {
     }
 
     const token = this.authService.generateJwt(user);
-    // console.log(token);
 
     return token;
   }

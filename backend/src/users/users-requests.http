@@ -3,10 +3,10 @@ POST http://localhost:3000/users/signup
 Content-Type: application/json
 
 {
-    "email" : "new@test.com",
-    "fullname": "new",
-    "username": "new",
-    "password": "new"
+    "email" : "new10@test.com",
+    "fullname": "new10",
+    "username": "new10",
+    "password": "new10"
 
 }
 
@@ -15,8 +15,8 @@ POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-    "email" : "new@test.com",
-    "password": "new"
+    "email" : "new10@test.com",
+    "password": "new10"
 }
 
 ### Get the currently signed in user

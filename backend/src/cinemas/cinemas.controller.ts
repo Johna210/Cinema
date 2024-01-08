@@ -8,14 +8,15 @@ export class CinemasController {
   constructor(private cinemasService: CinemasService) {}
 
   @Post('/signup')
-  @UseInterceptors(FileInterceptor('image'))
   async createCinema(@Body() body: CreateCinemaDto) {
-    this.cinemasService.create(
+    const cinema = await this.cinemasService.create(
       body.cinemaName,
       body.email,
       body.password,
       body.description,
       body.imagePath,
     );
+
+    return cinema;
   }
 }

@@ -8,6 +8,8 @@ import { MoviesModule } from './movies/movies.module';
 import { User } from './users/user.entity';
 import { Cinema } from './cinemas/cinema.entity';
 import { UserauthModule } from './auth/userauth/userauth.module';
+import { CinemaAuthModule } from './auth/cinema-auth/cinema-auth.module';
+import { CinemaAuthService } from './auth/cinema-auth/cinema-auth.service';
 
 @Module({
   imports: [
@@ -21,8 +23,9 @@ import { UserauthModule } from './auth/userauth/userauth.module';
     CinemasModule,
     MoviesModule,
     UserauthModule,
+    CinemaAuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, CinemaAuthService],
 })
 export class AppModule {}

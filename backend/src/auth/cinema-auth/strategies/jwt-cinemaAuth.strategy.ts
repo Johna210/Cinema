@@ -1,12 +1,12 @@
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { PassportStrategy } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
+import { PassportStrategy } from '@nestjs/passport';
 import { ConfigService } from '@nestjs/config';
 import { jwtConstants } from '../../constants';
 
 interface jwtPayload {
   sub: string;
-  username: string;
+  cinemaName: string;
   email: string;
 }
 

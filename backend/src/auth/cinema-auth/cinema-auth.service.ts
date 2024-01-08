@@ -1,19 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { User } from '../../users/user.entity';
+import { Cinema } from '../../cinemas/cinema.entity';
 import * as bcrypt from 'bcrypt';
 import { jwtConstants } from '../constants';
 
 @Injectable()
-export class UserauthService {
+export class CinemaAuthService {
   constructor(private jwtService: JwtService) {}
 
-  async generateJwt(user: User) {
+  async generateJwt(cinema: Cinema) {
     const token = await this.jwtService.signAsync(
       {
-        sub: user.id,
-        username: user.username,
-        email: user.email,
+        sub: cinema.id,
+        cinemaName: cinema.cinemaName,
+        email: cinema.cinemaName,
       },
       {
         secret: jwtConstants.secret,

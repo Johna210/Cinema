@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { UserauthService } from './userauth.service';
-import { JwtService } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './strategies/jwt-userAuth.strategy';
 import { JwtAuthGuard } from './guards/jwt-userAuth.guard';
-import { jwtConstants } from './constants';
+import { jwtConstants } from '../constants';
 
 @Module({
   imports: [
