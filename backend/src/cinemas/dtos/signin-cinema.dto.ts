@@ -1,6 +1,6 @@
 import { IsEmail, IsString, IsOptional } from 'class-validator';
 
-export class UpdateCinemaDto {
+export class SigninCinemaDto {
   @IsEmail()
   email: string;
 

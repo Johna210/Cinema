@@ -50,7 +50,7 @@ export class CinemasService {
 
   //* Service function for login
   async login(email: string, password: string) {
-    const cinema = this.findCinemaByEmail(email);
+    const cinema = await this.findCinemaByEmail(email);
 
     if (!cinema) {
       throw new NotFoundException('cinema not found');
@@ -58,16 +58,17 @@ export class CinemasService {
 
     const match = await this.authService.comparePasswords(
       password,
-      (await cinema).password,
+      cinema.password,
     );
 
     if (!match) {
       throw new BadRequestException('Incorrect Password');
     }
 
-    // Todo token
+    // token
+    const token = await this.authService.generateJwt(cinema);
 
-    return cinema;
+    return token;
   }
 
   async findOne(id: number) {
@@ -129,6 +130,28 @@ export class CinemasService {
     }
 
     return this.repo.remove(cinema);
+  }
+
+  async changePassword(
+    id: number,
+    currentPassword: string,
+    newPassword: string,
+  ) {
+    const cinema = await this.findOne(id);
+
+    if (!cinema) {
+      throw new NotFoundException('user not found');
+    }
+
+    if (!this.authService.comparePasswords(currentPassword, cinema.password)) {
+      throw new BadRequestException('Incorrect password');
+    }
+
+    const newPasswordHash = await this.authService.hashPassword(newPassword);
+
+    cinema.password = newPasswordHash;
+
+    return this.repo.save(cinema);
   }
 
   //TODO updateImage() {}

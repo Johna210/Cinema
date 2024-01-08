@@ -4,10 +4,7 @@ import {
   Post,
   Get,
   Patch,
-  Param,
-  Query,
   Delete,
-  NotFoundException,
   UseGuards,
   Request,
 } from '@nestjs/common';
@@ -28,7 +25,6 @@ export class UsersController {
   @Get('whoami')
   @UseGuards(JwtAuthGuard)
   whoAmI(@Request() req) {
-    console.log(req.user);
     return req.user;
   }
 
@@ -67,7 +63,6 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   @Delete('/delaccount')
   removeUser(@Request() req) {
-    console.log(req.user);
     return this.usersService.remove(req.user.sub);
   }
 
