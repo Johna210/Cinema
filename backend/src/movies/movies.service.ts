@@ -38,6 +38,15 @@ export class MoviesService {
      
     }
 
+    //to remove a movie by using its id
+    async removeMovie(id:number){
+        const movie = await this.findMovieById(id)
+        if(!movie){
+            throw new Error('user not found');
+        }
+        return this.moviesRepository.remove(movie);
+    }
+
     
 
 }
