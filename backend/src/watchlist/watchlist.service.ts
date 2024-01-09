@@ -24,4 +24,15 @@ export class WatchlistService {
     getMovieId(movieId:number){
         return this.watchListRepository.find({where:{movieId}})
     }
+
+    // get all the watchist by the userId
+    async getAllByUserId(userId:number){
+        const watch = await this.getUserId(userId)
+
+        if(!watch){
+            throw new Error("user id not fonund")
+        }
+        
+        return this.watchListRepository.find({where:{userId}})
+    }
 }
