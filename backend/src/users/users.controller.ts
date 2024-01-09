@@ -7,6 +7,7 @@ import {
   Delete,
   UseGuards,
   Request,
+  Param,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
@@ -16,11 +17,15 @@ import { UserDto } from './dtos/user.dto';
 import { signinUserDto } from './dtos/signin-user.dto';
 import { UpdatePasswordDto } from './dtos/update-password.dto';
 import { JwtAuthGuard } from 'src/auth/userauth/guards/jwt-userAuth.guard';
+import { WatchlistService } from 'src/watchlist/watchlist.service';
 
-@Serialize(UserDto)
+// @Serialize(UserDto)
 @Controller('users')
 export class UsersController {
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    private watchListService: WatchlistService,
+  ) {}
 
   @Get('whoami')
   @UseGuards(JwtAuthGuard)
@@ -46,20 +51,6 @@ export class UsersController {
     return user;
   }
 
-  // @Get('/:id')
-  // async findUser(@Param('id') id: string) {
-  //   const user = await this.usersService.findOne(parseInt(id));
-  //   if (!user) {
-  //     throw new NotFoundException('user not found');
-  //   }
-  //   return user;
-  // }
-
-  // @Get()
-  // UsersWithEmail(@Query('email') email: string) {
-  //   return this.usersService.findEmail(email);
-  // }
-
   @UseGuards(JwtAuthGuard)
   @Delete('/delaccount')
   removeUser(@Request() req) {
@@ -83,5 +74,29 @@ export class UsersController {
       body.currentPassword,
       body.newPassword,
     );
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch('/add/:id')
+  addToWatchlist(@Param('id') id: string, @Request() req) {
+    return this.watchListService.createWatchList(
+      parseInt(req.user.sub),
+      parseInt(id),
+    );
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Delete('/del/:id')
+  removeFromWatchList(@Param('id') id: string, @Request() req) {
+    return this.watchListService.removefromWatchList(
+      parseInt(req.user.sub),
+      parseInt(id),
+    );
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('/watchlist')
+  getUserWatchList(@Request() req) {
+    return this.watchListService.getAllByUserId(parseInt(req.user.sub));
   }
 }

@@ -11,13 +11,15 @@ import { UserauthModule } from './auth/userauth/userauth.module';
 import { CinemaAuthModule } from './auth/cinema-auth/cinema-auth.module';
 import { CinemaAuthService } from './auth/cinema-auth/cinema-auth.service';
 import { Movies } from './movies/movies.entity';
+import { WatchlistModule } from './watchlist/watchlist.module';
+import { WatchList } from './watchlist/watchlist.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'cinema.sqlite',
-      entities: [User, Cinema, Movies],
+      entities: [User, Cinema, Movies, WatchList],
       synchronize: true,
     }),
     UsersModule,
@@ -25,6 +27,7 @@ import { Movies } from './movies/movies.entity';
     MoviesModule,
     UserauthModule,
     CinemaAuthModule,
+    WatchlistModule,
   ],
   controllers: [AppController],
   providers: [AppService, CinemaAuthService],

@@ -7,9 +7,10 @@ import { User } from './user.entity';
 import { CurrentUserInterceptor } from './interceptors/current-user.interceptor';
 import { UserauthService } from 'src/auth/userauth/userauth.service';
 import { JwtService } from '@nestjs/jwt';
+import { WatchlistModule } from 'src/watchlist/watchlist.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User])],
+  imports: [TypeOrmModule.forFeature([User]), WatchlistModule],
   controllers: [UsersController],
   providers: [
     UsersService,
