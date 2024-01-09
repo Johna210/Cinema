@@ -3,10 +3,46 @@ POST http://localhost:3000/cinemas/signup
 Content-Type: application/json
 
 {
-    "email": "2@1.com",
-    "cinemaName": "1Cinema",
+    "email": "2@2.com",
+    "cinemaName": "2Cinema",
     "password": "1234",
     "description": "New Cinema has arrived.",
     "imagePath": "./images/cinemaProfile/1.jpg"
 }
 
+### Sign in a cinema
+POST http://localhost:3000/cinemas/signin
+Content-Type: application/json
+
+{
+    "email" : "2@2.com",
+    "password": "1234"
+}
+
+### Get the currently signed in Cinema
+GET http://localhost:3000/cinemas/whoami
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsImNpbmVtYU5hbWUiOiIxQ2luZW1hIiwiZW1haWwiOiIxQ2luZW1hIiwiaWF0IjoxNzA0NzUyNTk4LCJleHAiOjE3MDQ4Mzg5OTh9.7sjE9MQ9M9lLA3N5IKa-_Sx8d32SO8EC4LSpoRmp5iU
+
+
+### Delete the currently logedin user
+DELETE http://localhost:3000/cinemas/delaccount
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsImNpbmVtYU5hbWUiOiIxQ2luZW1hIiwiZW1haWwiOiIxQ2luZW1hIiwiaWF0IjoxNzA0NzcwMDMxLCJleHAiOjE3MDQ4NTY0MzF9.CTFqdXt3CmmN1umbRjQL82ooJTd4eNVtGq2Uzw8dVEk
+
+### Update a user 
+PATCH http://localhost:3000/cinemas/edit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImNpbmVtYU5hbWUiOiIyQ2luZW1hIiwiZW1haWwiOiIyQ2luZW1hIiwiaWF0IjoxNzA0NzcwMzc1LCJleHAiOjE3MDQ4NTY3NzV9.z9O_4YDQ1LDRmTFTY1SlQHvIpIa4-S-1x2xzRUIQyZE
+Content-Type: application/json
+
+{
+    "email": "abcd@abcd.com"
+}
+
+### Change user password
+PATCH http://localhost:3000/cinemas/changePass
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImNpbmVtYU5hbWUiOiIyQ2luZW1hIiwiZW1haWwiOiIyQ2luZW1hIiwiaWF0IjoxNzA0NzcwMzc1LCJleHAiOjE3MDQ4NTY3NzV9.z9O_4YDQ1LDRmTFTY1SlQHvIpIa4-S-1x2xzRUIQyZE
+Content-Type: application/json
+
+{
+    "currentPassword" : "new",
+    "newPassword" : "new2"
+}

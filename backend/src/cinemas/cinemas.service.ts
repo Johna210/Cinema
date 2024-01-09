@@ -55,7 +55,7 @@ export class CinemasService {
     if (!cinema) {
       throw new NotFoundException('cinema not found');
     }
-
+    console.log(cinema);
     const match = await this.authService.comparePasswords(
       password,
       cinema.password,

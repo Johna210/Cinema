@@ -20,7 +20,7 @@ import { UpdatePasswordDto } from '../users/dtos/update-password.dto';
 export class CinemasController {
   constructor(private cinemasService: CinemasService) {}
 
-  @Get('whoami')
+  @Get('/whoami')
   @UseGuards(JwtAuthGuard)
   whoAmI(@Request() req) {
     return req.user;
@@ -39,7 +39,7 @@ export class CinemasController {
     return cinema;
   }
 
-  @Post('/sigin')
+  @Post('/signin')
   async signin(@Body() body: SigninCinemaDto) {
     const cinema = await this.cinemasService.login(body.email, body.password);
     return cinema;
@@ -48,20 +48,23 @@ export class CinemasController {
   @UseGuards(JwtAuthGuard)
   @Delete('/delaccount')
   removeCinema(@Request() req) {
-    return this.cinemasService.remove(req.cinema.sub);
+    console.log(req.user);
+    return this.cinemasService.remove(req.user.sub);
   }
 
   @UseGuards(JwtAuthGuard)
   @Patch('/edit')
   updateCinema(@Request() req, @Body() body: UpdateCinemaDto) {
-    const cinema = req.cinema;
-    return this.cinemasService.update(parseInt(cinema.id), body);
+    const cinema = req.user;
+    // console.log(cinema);
+    console.log(body);
+    return this.cinemasService.update(parseInt(cinema.sub), body);
   }
 
   @UseGuards(JwtAuthGuard)
   @Patch('/changePass')
   updatePassword(@Request() req, @Body() body: UpdatePasswordDto) {
-    const cinema = req.cinema;
+    const cinema = req.user;
 
     return this.cinemasService.changePassword(
       cinema.sub,
