@@ -53,7 +53,6 @@ export class UsersService {
       password,
       user.password,
     );
-    console.log(match);
 
     if (!match) {
       throw new BadRequestException('Incorrect password');

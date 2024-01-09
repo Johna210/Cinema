@@ -33,7 +33,7 @@ GET http://localhost:3000/users?email=a@a.com
 
 ### Delete the currently logedin user
 DELETE http://localhost:3000/users/delaccount
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksInVzZXJuYW1lIjoibmV3IiwiZW1haWwiOiJuZXdAdGVzdC5jb20iLCJpYXQiOjE3MDQ3MTk0MzMsImV4cCI6MTcwNDgwNTgzM30.8YvYMK7QJnrUCg2D3hlBaKhFH2fc7JVYJN2S7dkGaS4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDc5NTkzNSwiZXhwIjoxNzA0ODgyMzM1fQ.TNdjntUYAGPY8VMVGo-gL-TAe5FkGfnj7MUmVdVcpPE
 
 ### Update a user 
 PATCH http://localhost:3000/users/edit

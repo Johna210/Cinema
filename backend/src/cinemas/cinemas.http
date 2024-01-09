@@ -3,11 +3,11 @@ POST http://localhost:3000/cinemas/signup
 Content-Type: application/json
 
 {
-    "email": "2@2.com",
-    "cinemaName": "2Cinema",
+    "email": "test5@test.com",
+    "cinemaName": "Test5",
     "password": "1234",
     "description": "New Cinema has arrived.",
-    "imagePath": "./images/cinemaProfile/1.jpg"
+    "imagePath": ""
 }
 
 ### Sign in a cinema
@@ -15,13 +15,13 @@ POST http://localhost:3000/cinemas/signin
 Content-Type: application/json
 
 {
-    "email" : "2@2.com",
+    "email": "test5@test.com",
     "password": "1234"
 }
 
 ### Get the currently signed in Cinema
 GET http://localhost:3000/cinemas/whoami
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsImNpbmVtYU5hbWUiOiIxQ2luZW1hIiwiZW1haWwiOiIxQ2luZW1hIiwiaWF0IjoxNzA0NzUyNTk4LCJleHAiOjE3MDQ4Mzg5OTh9.7sjE9MQ9M9lLA3N5IKa-_Sx8d32SO8EC4LSpoRmp5iU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJjaW5lbWFOYW1lIjoiNENpbmVtYSIsImVtYWlsIjoiNENpbmVtYSIsImlhdCI6MTcwNDgwMTg5NSwiZXhwIjoxNzA0ODg4Mjk1fQ.qy0tVAHwKnFvcRXTsZBUV-xOfTqHZN71hSkfxUzD2-o
 
 
 ### Delete the currently logedin user
@@ -43,6 +43,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImNpbmVtY
 Content-Type: application/json
 
 {
-    "currentPassword" : "new",
-    "newPassword" : "new2"
+    "currentPassword" : "1234",
+    "newPassword" : "abcd"
 }

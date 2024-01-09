@@ -8,6 +8,7 @@ import {
   Request,
   Delete,
   Patch,
+  UploadedFile,
 } from '@nestjs/common';
 import { CreateCinemaDto } from './dtos/create-cinema.dto';
 import { CinemasService } from './cinemas.service';
@@ -15,6 +16,8 @@ import { JwtAuthGuard } from '../auth/cinema-auth/guards/jwt-cinemaAuth.guard';
 import { SigninCinemaDto } from './dtos/signin-cinema.dto';
 import { UpdateCinemaDto } from './dtos/update-cinema.dto';
 import { UpdatePasswordDto } from '../users/dtos/update-password.dto';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
 
 @Controller('cinemas')
 export class CinemasController {
@@ -39,11 +42,47 @@ export class CinemasController {
     return cinema;
   }
 
+  @Post('/image')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: 'src/images/cinemaProfiles',
+        filename: (req, file, callback) => {
+          const filename = `${file.originalname}`;
+          callback(null, filename);
+          return filename;
+        },
+      }),
+    }),
+  )
+  @UseGuards(JwtAuthGuard)
+  async uploadImage(@Request() req, @UploadedFile() file: Express.Multer.File) {
+    console.log('file', file);
+
+    console.log(file.filename);
+    return this.cinemasService.AddImagePath(
+      parseInt(req.user.sub),
+      file.filename,
+    );
+  }
+
   @Post('/signin')
   async signin(@Body() body: SigninCinemaDto) {
     const cinema = await this.cinemasService.login(body.email, body.password);
     return cinema;
   }
+
+  // @UseGuards(JwtAuthGuard)
+  // @Post('/addMovie')
+  // async addMovie(@Body() body: any, @Request() req) {
+
+  //   const movie = this.movieService.creatMovie({
+  //     body.movieName
+
+  //     req.user.sub
+  //   })
+
+  // }
 
   @UseGuards(JwtAuthGuard)
   @Delete('/delaccount')

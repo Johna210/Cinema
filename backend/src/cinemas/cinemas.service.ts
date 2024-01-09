@@ -55,7 +55,6 @@ export class CinemasService {
     if (!cinema) {
       throw new NotFoundException('cinema not found');
     }
-    console.log(cinema);
     const match = await this.authService.comparePasswords(
       password,
       cinema.password,
@@ -154,7 +153,16 @@ export class CinemasService {
     return this.repo.save(cinema);
   }
 
-  //TODO updateImage() {}
+  async AddImagePath(id: number, filename: string) {
+    if (!id) {
+      return 'No cinema Id provided';
+    }
+
+    const cinema = await this.findOne(id);
+    cinema.imagePath = `./image/cinemaProfiles/${filename}`;
+
+    return this.repo.save(cinema);
+  }
 
   // addMovie() {}
 
