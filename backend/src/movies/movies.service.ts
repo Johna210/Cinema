@@ -32,5 +32,12 @@ export class MoviesService {
         return this.moviesRepository.findOne({where:{day:day}})
     }
 
+    //to find the movie by its own id  we will use it in the update and remove funcitons 
+    findMovieById(id:number){
+        return this.moviesRepository.findOne({where:{id}})
+     
+    }
+
+    
 
 }
