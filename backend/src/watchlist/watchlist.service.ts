@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { WatchList } from './watchlist.entity';
 import { Repository } from 'typeorm';
@@ -34,5 +34,18 @@ export class WatchlistService {
         }
         
         return this.watchListRepository.find({where:{userId}})
+    }
+
+    // removes the watchlist using userId to find the current user and movieId to actual remove it from the watchlist
+    async removefromWatchList(userId:number,movieId:number){
+        const watchUser = await this.getUserId(userId)
+        if(!watchUser){
+            throw new NotFoundException("user not found")
+        }
+
+        const watchMovie = await this.getMovieId(movieId)
+
+
+        return this.watchListRepository.remove(watchMovie)
     }
 }
