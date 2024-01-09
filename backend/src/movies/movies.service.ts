@@ -47,6 +47,20 @@ export class MoviesService {
         return this.moviesRepository.remove(movie);
     }
 
+    // to update the movie by using its id
+    async updateMovie(id:number, attrs:Partial<Movies>){
+        const movie = await this.findMovieById(id);
+        if(!movie){
+            throw new Error('Movie not found');
+        }
+        
+        Object.assign(movie,attrs);
+        return this.moviesRepository.save(movie);
+    
+    }
+
+
+
     
 
 }
