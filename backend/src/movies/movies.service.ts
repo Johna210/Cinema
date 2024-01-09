@@ -17,8 +17,13 @@ export class MoviesService {
             showTime,
             imageUrl,
             cinemaId})
-            
+
         return this.moviesRepository.save(newmovie)
+       }
+
+    // find all the movies that have similar cinemaid
+    findByid(cinemaId:number){
+        return this.moviesRepository.find({where: {cinemaId}})
        }
 
 }
