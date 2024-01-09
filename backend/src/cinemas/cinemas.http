@@ -15,13 +15,13 @@ POST http://localhost:3000/cinemas/signin
 Content-Type: application/json
 
 {
-    "email": "test6@test.com",
+    "email": "test5@test.com",
     "password": "1234"
 }
 
 ### Get the currently signed in Cinema
 GET http://localhost:3000/cinemas/whoami
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJjaW5lbWFOYW1lIjoiNENpbmVtYSIsImVtYWlsIjoiNENpbmVtYSIsImlhdCI6MTcwNDgwMTg5NSwiZXhwIjoxNzA0ODg4Mjk1fQ.qy0tVAHwKnFvcRXTsZBUV-xOfTqHZN71hSkfxUzD2-o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJjaW5lbWFOYW1lIjoiVGVzdDUiLCJlbWFpbCI6IlRlc3Q1IiwiaWF0IjoxNzA0ODM1NTMwLCJleHAiOjE3MDQ5MjE5MzB9.DRanf1DxISE2Ftz2wzwuyQuAEjj2w7r3B3avZhJxF1E
 
 
 ### Delete the currently logedin user
@@ -46,3 +46,37 @@ Content-Type: application/json
     "currentPassword" : "1234",
     "newPassword" : "abcd"
 }
+
+
+### Cinemas Add movie
+POST http://localhost:3000/cinemas/addMovie
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJjaW5lbWFOYW1lIjoiVGVzdDUiLCJlbWFpbCI6IlRlc3Q1IiwiaWF0IjoxNzA0ODM1NTMwLCJleHAiOjE3MDQ5MjE5MzB9.DRanf1DxISE2Ftz2wzwuyQuAEjj2w7r3B3avZhJxF1E
+Content-Type: application/json
+
+{
+    "title" : "Spider man",
+    "genre": "la la",
+    "day": "1/9/2024",
+    "showTime": "3:00pm",
+    "CinemaId": 11
+
+}
+
+### Remove Movie From Cinema
+DELETE http://localhost:3000/cinemas/removeMovie/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJjaW5lbWFOYW1lIjoiVGVzdDYiLCJlbWFpbCI6IlRlc3Q2IiwiaWF0IjoxNzA0ODM0NDk0LCJleHAiOjE3MDQ5MjA4OTR9.tKbDNXMNu-AFueJlc_hduL9z-5UXhB4raCTMp7Y1tQg
+
+
+### Update Movie posted by cinemas
+PATCH  http://localhost:3000/cinemas/updateMovie/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJjaW5lbWFOYW1lIjoiVGVzdDYiLCJlbWFpbCI6IlRlc3Q2IiwiaWF0IjoxNzA0ODM0NDk0LCJleHAiOjE3MDQ5MjA4OTR9.tKbDNXMNu-AFueJlc_hduL9z-5UXhB4raCTMp7Y1tQg
+Content-Type: application/json
+
+{
+    "title": "la la land",
+    "day": "1/10/2024"
+}
+
+### Get all the movies posted by the cinema
+GET http://localhost:3000/cinemas/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJjaW5lbWFOYW1lIjoiVGVzdDUiLCJlbWFpbCI6IlRlc3Q1IiwiaWF0IjoxNzA0ODM1NTMwLCJleHAiOjE3MDQ5MjE5MzB9.DRanf1DxISE2Ftz2wzwuyQuAEjj2w7r3B3avZhJxF1E
