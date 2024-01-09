@@ -15,4 +15,13 @@ export class WatchlistService {
         return this.watchListRepository.save(watchList);
 
     }
+    // returns the userId from the database and this will be used to get watchlist by userID
+    getUserId(userId:number){
+        return this.watchListRepository.find({where:{userId}})
+    }
+
+    // returns the movieIs form the database and this will be used to remove watchlist by movesId 
+    getMovieId(movieId:number){
+        return this.watchListRepository.find({where:{movieId}})
+    }
 }
