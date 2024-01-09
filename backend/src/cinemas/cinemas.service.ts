@@ -159,7 +159,7 @@ export class CinemasService {
     }
 
     const cinema = await this.findOne(id);
-    cinema.imagePath = `./image/cinemaProfiles/${filename}`;
+    cinema.imagePath = `./images/cinemaProfiles/${filename}`;
 
     return this.repo.save(cinema);
   }

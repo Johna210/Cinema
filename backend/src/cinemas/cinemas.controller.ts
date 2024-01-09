@@ -57,9 +57,6 @@ export class CinemasController {
   )
   @UseGuards(JwtAuthGuard)
   async uploadImage(@Request() req, @UploadedFile() file: Express.Multer.File) {
-    console.log('file', file);
-
-    console.log(file.filename);
     return this.cinemasService.AddImagePath(
       parseInt(req.user.sub),
       file.filename,

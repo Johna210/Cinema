@@ -3,8 +3,8 @@ POST http://localhost:3000/cinemas/signup
 Content-Type: application/json
 
 {
-    "email": "test5@test.com",
-    "cinemaName": "Test5",
+    "email": "test6@test.com",
+    "cinemaName": "Test6",
     "password": "1234",
     "description": "New Cinema has arrived.",
     "imagePath": ""
@@ -15,7 +15,7 @@ POST http://localhost:3000/cinemas/signin
 Content-Type: application/json
 
 {
-    "email": "test5@test.com",
+    "email": "test6@test.com",
     "password": "1234"
 }
 
