@@ -19,11 +19,18 @@ export class MoviesService {
             cinemaId})
 
         return this.moviesRepository.save(newmovie)
-       }
+    }
+
 
     // find all the movies that have similar cinemaid
     findByid(cinemaId:number){
         return this.moviesRepository.find({where: {cinemaId}})
-       }
+    }
+
+    //returns all movies that have the same day
+    findByDay(day:string){
+        return this.moviesRepository.findOne({where:{day:day}})
+    }
+
 
 }
