@@ -10,13 +10,14 @@ import { Cinema } from './cinemas/cinema.entity';
 import { UserauthModule } from './auth/userauth/userauth.module';
 import { CinemaAuthModule } from './auth/cinema-auth/cinema-auth.module';
 import { CinemaAuthService } from './auth/cinema-auth/cinema-auth.service';
+import { Movies } from './movies/movies.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'cinema.sqlite',
-      entities: [User, Cinema],
+      entities: [User, Cinema,Movies],
       synchronize: true,
     }),
     UsersModule,
