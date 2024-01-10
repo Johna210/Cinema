@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ### Get the currently signed in user
 GET http://localhost:3000/users/whoami
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJ1c2VybmFtZSI6Im5ldyIsImVtYWlsIjoibmV3QHRlc3QuY29tIiwiaWF0IjoxNzA0NzIwMzgxLCJleHAiOjE3MDQ4MDY3ODF9.XkTrHcdoAbKEuEucxny9O1v31CUsLgrGUgon-Og7otg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDkxMjEzMiwiZXhwIjoxNzA0OTk4NTMyfQ.Wh5F4TQ6B4iBLZtyYNC8Xvc9QZkoL2t-DqRUBP7Z5tU
 
 
 
@@ -68,3 +68,5 @@ GET  http://localhost:3000/users/watchlist
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDgzNzU1NSwiZXhwIjoxNzA0OTIzOTU1fQ.r9EiC0CCItAiLfn-QqjQxoc6OY64rdQTgXZPgYYDk_Q
 
 ### Get all the movies from a particular cinema
+GET http://localhost:3000/users/cinema/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDkxMjEzMiwiZXhwIjoxNzA0OTk4NTMyfQ.Wh5F4TQ6B4iBLZtyYNC8Xvc9QZkoL2t-DqRUBP7Z5tU
