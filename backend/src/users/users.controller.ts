@@ -99,4 +99,8 @@ export class UsersController {
   getUserWatchList(@Request() req) {
     return this.watchListService.getAllByUserId(parseInt(req.user.sub));
   }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('/cinema/:id')
+  getMoviesFromCinema(@Param('id') id: string) {}
 }
