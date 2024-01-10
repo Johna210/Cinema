@@ -16,9 +16,9 @@ import { Serialize } from '../Interceptors/serialize.iterceptor';
 import { UserDto } from './dtos/user.dto';
 import { signinUserDto } from './dtos/signin-user.dto';
 import { UpdatePasswordDto } from './dtos/update-password.dto';
-import { JwtAuthGuard } from 'src/auth/userauth/guards/jwt-userAuth.guard';
-import { WatchlistService } from 'src/watchlist/watchlist.service';
-import { MoviesService } from 'src/movies/movies.service';
+import { JwtAuthGuard } from '../auth/userauth/guards/jwt-userAuth.guard';
+import { WatchlistService } from '../watchlist/watchlist.service';
+import { MoviesService } from '../movies/movies.service';
 
 // @Serialize(UserDto)
 @Controller('users')

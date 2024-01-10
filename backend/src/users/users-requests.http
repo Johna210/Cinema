@@ -15,8 +15,8 @@ POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-    "email" : "new10@test.com",
-    "password": "new10"
+    "email" : "new@test.com",
+    "password": "new"
 }
 
 ### Get the currently signed in user
