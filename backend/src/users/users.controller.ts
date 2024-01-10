@@ -18,6 +18,7 @@ import { signinUserDto } from './dtos/signin-user.dto';
 import { UpdatePasswordDto } from './dtos/update-password.dto';
 import { JwtAuthGuard } from 'src/auth/userauth/guards/jwt-userAuth.guard';
 import { WatchlistService } from 'src/watchlist/watchlist.service';
+import { MoviesService } from 'src/movies/movies.service';
 
 // @Serialize(UserDto)
 @Controller('users')
@@ -25,6 +26,7 @@ export class UsersController {
   constructor(
     private usersService: UsersService,
     private watchListService: WatchlistService,
+    private MoviesService: MoviesService,
   ) {}
 
   @Get('whoami')
@@ -102,5 +104,7 @@ export class UsersController {
 
   @UseGuards(JwtAuthGuard)
   @Get('/cinema/:id')
-  getMoviesFromCinema(@Param('id') id: string) {}
+  getMoviesFromCinema(@Param('id') id: string) {
+    return this.MoviesService.getCinemaMovies(parseInt(id));
+  }
 }

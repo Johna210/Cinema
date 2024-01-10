@@ -8,10 +8,10 @@ import { CurrentUserInterceptor } from './interceptors/current-user.interceptor'
 import { UserauthService } from 'src/auth/userauth/userauth.service';
 import { JwtService } from '@nestjs/jwt';
 import { WatchlistModule } from 'src/watchlist/watchlist.module';
-import { CinemasModule } from 'src/cinemas/cinemas.module';
+import { MoviesModule } from 'src/movies/movies.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User]), WatchlistModule, CinemasModule],
+  imports: [TypeOrmModule.forFeature([User]), WatchlistModule, MoviesModule],
   controllers: [UsersController],
   providers: [
     UsersService,
