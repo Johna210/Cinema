@@ -20,7 +20,7 @@ import { UpdatePasswordDto } from '../users/dtos/update-password.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { MoviesService } from '../movies/movies.service';
-import { UpdateMovieDto } from 'src/movies/dto/update-movie.dto';
+import { UpdateMovieDto } from '../movies/dto/update-movie.dto';
 
 @Controller('cinemas')
 export class CinemasController {

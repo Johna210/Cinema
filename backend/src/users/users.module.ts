@@ -7,7 +7,7 @@ import { User } from './user.entity';
 import { CurrentUserInterceptor } from './interceptors/current-user.interceptor';
 import { UserauthService } from '../auth/userauth/userauth.service';
 import { JwtService } from '@nestjs/jwt';
-import { WatchlistModule } from 'src/watchlist/watchlist.module';
+import { WatchlistModule } from '../watchlist/watchlist.module';
 import { MoviesModule } from '../movies/movies.module';
 
 @Module({
