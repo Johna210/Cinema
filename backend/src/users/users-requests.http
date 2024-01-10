@@ -66,3 +66,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2Vyb
 ### Get all The Movies from the watchlist
 GET  http://localhost:3000/users/watchlist
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDgzNzU1NSwiZXhwIjoxNzA0OTIzOTU1fQ.r9EiC0CCItAiLfn-QqjQxoc6OY64rdQTgXZPgYYDk_Q
+
+### Get all the movies from a particular cinema

@@ -7,11 +7,13 @@ import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { UserauthService } from '../auth/userauth/userauth.service';
+import { CinemasService } from 'src/cinemas/cinemas.service';
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User) private repo: Repository<User>,
     private authService: UserauthService,
+    private cinemasService: CinemasService,
   ) {}
 
   async create(
