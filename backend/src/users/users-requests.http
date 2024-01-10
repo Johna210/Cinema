@@ -3,10 +3,10 @@ POST http://localhost:3000/users/signup
 Content-Type: application/json
 
 {
-    "email" : "newtest@newtest.com",
-    "fullname": "new tester",
-    "username": "newTester",
-    "password": "newTester"
+    "email" : "new3@test.com",
+    "fullname": "new3",
+    "username": "new3",
+    "password": "new3"
 
 }
 
@@ -15,15 +15,15 @@ POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-    "email" : "newtest@newtest.com",
-    "password": "newTester"
+    "email" : "new10@test.com",
+    "password": "new10"
 }
 
 ### Get the currently signed in user
 GET http://localhost:3000/users/whoami
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDkxMjEzMiwiZXhwIjoxNzA0OTk4NTMyfQ.Wh5F4TQ6B4iBLZtyYNC8Xvc9QZkoL2t-DqRUBP7Z5tU
 
-### Sign out 
-POST  http://localhost:3000/users/signout
+
 
 ### Find a particular user with a given id
 GET http://localhost:3000/users/1
@@ -31,13 +31,42 @@ GET http://localhost:3000/users/1
 ### Find all users with a given email
 GET http://localhost:3000/users?email=a@a.com
 
-### Delete a user with a given id
-DELETE http://localhost:3000/users/2
+### Delete the currently logedin user
+DELETE http://localhost:3000/users/delaccount
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDc5NTkzNSwiZXhwIjoxNzA0ODgyMzM1fQ.TNdjntUYAGPY8VMVGo-gL-TAe5FkGfnj7MUmVdVcpPE
 
 ### Update a user 
-PATCH http://localhost:3000/users/1
+PATCH http://localhost:3000/users/edit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsInVzZXJuYW1lIjoiMyIsImVtYWlsIjoiM0B0ZXN0My5jb20iLCJpYXQiOjE3MDQ3MjAxNzAsImV4cCI6MTcwNDgwNjU3MH0.MH5kj3foyO8wF5N_QW8usiS5XaYd1S0OsWEwxBN5ag4
 Content-Type: application/json
 
 {
-    "password": "56789"
+    "email": "abcd@abcd.com"
 }
+
+### Change user password
+PATCH http://localhost:3000/users/changePass
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJ1c2VybmFtZSI6Im5ldyIsImVtYWlsIjoibmV3QHRlc3QuY29tIiwiaWF0IjoxNzA0NzI0MTAxLCJleHAiOjE3MDQ4MTA1MDF9.PnkTOhBeCImX0J0mQim-sSRj_lUnmPclx75UoslBQyk
+Content-Type: application/json
+
+{
+    "currentPassword" : "new",
+    "newPassword" : "new2"
+}
+
+### Add Movie to watchlist
+PATCH http://localhost:3000/users/add/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDgzNzU1NSwiZXhwIjoxNzA0OTIzOTU1fQ.r9EiC0CCItAiLfn-QqjQxoc6OY64rdQTgXZPgYYDk_Q
+
+### Delete Movie from watchlist
+DELETE http://localhost:3000/users/del/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDgzNzU1NSwiZXhwIjoxNzA0OTIzOTU1fQ.r9EiC0CCItAiLfn-QqjQxoc6OY64rdQTgXZPgYYDk_Q
+
+
+### Get all The Movies from the watchlist
+GET  http://localhost:3000/users/watchlist
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDgzNzU1NSwiZXhwIjoxNzA0OTIzOTU1fQ.r9EiC0CCItAiLfn-QqjQxoc6OY64rdQTgXZPgYYDk_Q
+
+### Get all the movies from a particular cinema
+GET http://localhost:3000/users/cinema/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDkxMjEzMiwiZXhwIjoxNzA0OTk4NTMyfQ.Wh5F4TQ6B4iBLZtyYNC8Xvc9QZkoL2t-DqRUBP7Z5tU

@@ -4,12 +4,10 @@ import {
   Post,
   Get,
   Patch,
-  Param,
-  Query,
   Delete,
-  NotFoundException,
-  Session,
   UseGuards,
+  Request,
+  Param,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
@@ -17,77 +15,96 @@ import { UsersService } from './users.service';
 import { Serialize } from '../Interceptors/serialize.iterceptor';
 import { UserDto } from './dtos/user.dto';
 import { signinUserDto } from './dtos/signin-user.dto';
-import { AuthService } from './auth.service';
-import { CurrentUser } from './decorators/current-user.decorator';
-import { User } from './user.entity';
-import { AuthGuard } from '../guards/users.guard';
+import { UpdatePasswordDto } from './dtos/update-password.dto';
+import { JwtAuthGuard } from 'src/auth/userauth/guards/jwt-userAuth.guard';
+import { WatchlistService } from 'src/watchlist/watchlist.service';
+import { MoviesService } from 'src/movies/movies.service';
 
-@Serialize(UserDto)
+// @Serialize(UserDto)
 @Controller('users')
 export class UsersController {
   constructor(
     private usersService: UsersService,
-    private authService: AuthService,
+    private watchListService: WatchlistService,
+    private MoviesService: MoviesService,
   ) {}
 
-  // @Get('/whoami')
-  // whoAmI(@Session() session: any) {
-  //   return this.usersService.findOne(session.userId);
-  // }
-
   @Get('whoami')
-  @UseGuards(AuthGuard)
-  whoAmI(@CurrentUser() user: User) {
-    return user;
+  @UseGuards(JwtAuthGuard)
+  whoAmI(@Request() req) {
+    return req.user;
   }
 
   @Post('/signup')
-  async createUser(@Body() body: CreateUserDto, @Session() session: any) {
-    const user = await this.authService.signup(
+  async createUser(@Body() body: CreateUserDto) {
+    const user = await this.usersService.create(
       body.fullname,
       body.email,
       body.username,
       body.password,
     );
 
-    session.userId = user.id;
     return user;
   }
 
   @Post('/signin')
-  async signin(@Body() body: signinUserDto, @Session() session: any) {
-    const user = await this.authService.signin(body.email, body.password);
-
-    session.userId = user.id;
+  async signin(@Body() body: signinUserDto) {
+    const user = await this.usersService.login(body.email, body.password);
     return user;
   }
 
-  @Post('/signout')
-  signOut(@Session() session: any) {
-    session.userId = null;
+  @UseGuards(JwtAuthGuard)
+  @Delete('/delaccount')
+  removeUser(@Request() req) {
+    return this.usersService.remove(req.user.sub);
   }
 
-  @Get('/:id')
-  async findUser(@Param('id') id: string) {
-    const user = await this.usersService.findOne(parseInt(id));
-    if (!user) {
-      throw new NotFoundException('user not found');
-    }
-    return user;
+  @UseGuards(JwtAuthGuard)
+  @Patch('/edit')
+  updateUser(@Request() req, @Body() body: UpdateUserDto) {
+    const user = req.user;
+    return this.usersService.update(parseInt(user.sub), body);
   }
 
-  @Get()
-  UsersWithEmail(@Query('email') email: string) {
-    return this.usersService.findEmail(email);
+  @UseGuards(JwtAuthGuard)
+  @Patch('/changePass')
+  updatePassword(@Request() req, @Body() body: UpdatePasswordDto) {
+    const user = req.user;
+
+    return this.usersService.changePassword(
+      user.sub,
+      body.currentPassword,
+      body.newPassword,
+    );
   }
 
-  @Delete('/:id')
-  removeUser(@Param('id') id: string) {
-    return this.usersService.remove(parseInt(id));
+  @UseGuards(JwtAuthGuard)
+  @Patch('/add/:id')
+  addToWatchlist(@Param('id') id: string, @Request() req) {
+    return this.watchListService.createWatchList(
+      parseInt(req.user.sub),
+      parseInt(id),
+    );
   }
 
-  @Patch('/:id')
-  updateUser(@Param('id') id: string, @Body() body: UpdateUserDto) {
-    return this.usersService.update(parseInt(id), body);
+  @UseGuards(JwtAuthGuard)
+  @Delete('/del/:id')
+  removeFromWatchList(@Param('id') id: string, @Request() req) {
+    return this.watchListService.removefromWatchList(
+      parseInt(req.user.sub),
+      parseInt(id),
+    );
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('/watchlist')
+  getUserWatchList(@Request() req) {
+    return this.watchListService.getAllByUserId(parseInt(req.user.sub));
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('/cinema/:id')
+  getMoviesFromCinema(@Param('id') id: string) {
+    return this.MoviesService.getCinemaMovies(parseInt(id));
   }
 }
