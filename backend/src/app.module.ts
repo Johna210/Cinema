@@ -17,8 +17,12 @@ import { WatchList } from './watchlist/watchlist.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'cinema.sqlite',
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'admin',
+      database: 'cinema',
       entities: [User, Cinema, Movies, WatchList],
       synchronize: true,
     }),
