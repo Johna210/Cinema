@@ -1,71 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-  />
- 
-</head>
-<body class="profile-body">
-    <header>
-        <logo>Century Cinema</logo>
-        <nav class="user-nav">
-            <a href="mangerhome.html">Schedule</a>
-            <a href="cinemaMovieAdd.html">Add movie</a>
-            <a href="cinema-profile.html">Profile</a>
-        </nav>
-        
-    </header>
-    <main class="profile-main">
-      
-      <h1 class="manager-h1">Manager Profile</h1>
-      <form action="add_content.php" method="POST" class="profile-form">
-        <div class="input-right">
-          <label for="cinema_name">Cinema Name:</label>
-          <input type="text" id="cinema_name" name="cinema_name" required placeholder="enter name">
-          <br><br>
-          <div>
-            <label for="address">Address:</label>
-            <textarea type="text" id="address" name="address" rows="4" cols="30" required placeholder="enter address"></textarea>
-            <br><br>   
-          <label for="cinema_description">Cinema Description:</label>
-          <textarea id="cinema_description" name="cinema_description" rows="4" cols="30" required placeholder="enter description"></textarea>
-          <br><br>
-        </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        />
+    </head>
+    <body class="profile-body">
+        <header>
+            <logo>Century Cinema</logo>
+            <nav class="user-nav">
+                <a href="mangerhome.html">Schedule</a>
+                <a href="cinemaMovieAdd.html">Add movie</a>
+                <a href="cinema-profile.html">Profile</a>
+            </nav>
+        </header>
+        <main class="profile-main">
+            <h1 class="manager-h1">Manager Profile</h1>
 
-
-        </div>
-
-
-
-        <div class="input-right">
-          
-            <label for="cinema_image">Cinema Image:</label>
-          <input type="file" id="cinema_image" name="cinema_image" accept="image/*"  required>
-          <br><br>
-          <label for="ticketing_info">Opening Hours:</label>
-          <textarea id="opening_info" name="opening_hours" rows="4" cols="30" required placeholder="enter opening hours"></textarea>
-          <br><br>
-          <label for="ticketing_info">Ticketing Information:</label>
-          <textarea id="ticketing_info" name="ticketing_info" rows="4" cols="30" required placeholder="enter ticketing_info"></textarea>
-          <br><br>
-
-        
-        
-       
-         
-        </div>
-      
-      </form>
-      <div class="submit-button">
-      <button type="submit" class="profile-button">Add Content </button>
-    </div>
-
-    </main>
-</body>
+            <form id="myForm" class="profile-form">
+                <label for="cinema_image">Cinema Image:</label>
+                <input type="file" id="cinema_image" name="cinema_image" />
+                <button type="submit">Post Image</button>
+            </form>
+        </main>
+        <script src="./JS/cinema/profile.js"></script>
+        <script src="./JS/cinema/profile_ui.js"></script>
+    </body>
 </html>
