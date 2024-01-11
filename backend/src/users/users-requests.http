@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ### Get the currently signed in user
 GET http://localhost:3000/users/whoami
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6Im5ldzEwIiwiZW1haWwiOiJuZXcxMEB0ZXN0LmNvbSIsImlhdCI6MTcwNDkxMjEzMiwiZXhwIjoxNzA0OTk4NTMyfQ.Wh5F4TQ6B4iBLZtyYNC8Xvc9QZkoL2t-DqRUBP7Z5tU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoibmV3IiwiZW1haWwiOiJuZXdAdGVzdC5jb20iLCJpYXQiOjE3MDQ5MjU4NTEsImV4cCI6MTcwNTAxMjI1MX0.TRMfipStc-RjKgRORXr_LN9F8QpT1aL-ZBD3-5Z5-S8
 
 
 
