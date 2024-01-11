@@ -23,7 +23,7 @@ const createCinema = (cinemaName, email, password, description) => {
 };
 
 const logCinema = (email, password) => {
-    return fetch(`${BASEURL}/users/signin`, {
+    return fetch(`${BASEURL}/cinemas/signin`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -37,4 +37,19 @@ const logCinema = (email, password) => {
         .then((response) => response.json())
         .then((data) => data)
         .then((error) => error);
+};
+
+const getLoggedCinema = async (jwt_token) => {
+    const response = await fetch(`${BASEURL}/cinemas/current`, {
+        headers: {
+            Authorization: `Bearer ${jwt_token}`,
+        },
+        mode: "cors",
+    });
+    if (response.status == 401) {
+        localStorage.clear();
+        window.location.href = "cinemaManagerLogin.html";
+    }
+
+    return await response;
 };
