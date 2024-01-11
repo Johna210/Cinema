@@ -29,13 +29,14 @@ export class UsersController {
     private MoviesService: MoviesService,
   ) {}
 
-  @Get('whoami')
+  @Get('current')
   @UseGuards(JwtAuthGuard)
   whoAmI(@Request() req) {
     return req.user;
   }
 
   @Post('/signup')
+  @Serialize(UserDto)
   async createUser(@Body() body: CreateUserDto) {
     const user = await this.usersService.create(
       body.fullname,
@@ -43,7 +44,6 @@ export class UsersController {
       body.username,
       body.password,
     );
-
     return user;
   }
 

@@ -18,25 +18,28 @@
         <form class="add-form">
                 <label for="name"> Cinema Name:</label>
                 <input type="text" id="name">
-               <br>
-               <br>
-              
+              <br>
+              <br>
                 <label for="email">Email:</label>
                 <input type="text" id="email">
-                <br><br>
+                <br>
+                <br>
                 <label for="Password">Password:</label>
-                <input type="text" id="password"><br><br>
+                <input type="password" id="password"><br><br>
                 <label for="password">Confirm Password:</label>
-                <input type="text" id="password"><br><br>
-                <label for="description" id="description"> Description:</label>
+                <input type="password" id="confirmation"><br><br>
+                <label for="description" > Description:</label>
                 <br>
-                <textarea name id cols="30" rows="10" placeholder="Description (i.e about,location, social medias)"></textarea>
+                <textarea cols="30" rows="10" placeholder="Description (i.e about,location, social medias)" id="description" ></textarea>
                 <br>
                 <br>
-                
+                <div class="message"></div>
                 <button type="Submit" class="submit-button">Sign in</button>
                 
-          
         </form>
+
+        <script src="./JS/auth/cinemaAuth.js"></script>
+        <script src="./JS/auth/cinemaAuth_ui.js"></script>
+
 </body>
 </html>

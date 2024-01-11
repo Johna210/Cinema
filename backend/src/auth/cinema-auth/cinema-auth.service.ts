@@ -21,7 +21,7 @@ export class CinemaAuthService {
       },
     );
 
-    return token;
+    return { cinematoken: token };
   }
 
   async hashPassword(password: string) {

@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="loginBody">
-    <div class="loginDiv">
-    <div>
-    <p>Welcome Back!</p>
-    <h3>Please Login to your account.</h3>
-    <fieldset>
-    <form class="login-form">
-          
-            <label for="email">Email:</label>
-            <input type="text" id="email">
-            <br><br>
-            <label for="Password">Password:</label>
-            <input type="text" id="password"><br><br>
-           
-            <br>
-            <br>
-            
-            <button type="Submit" class="submit-button">Login</button>
-    </form>
-</fieldset>
-</div>
-</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="loginBody">
+        <div class="loginDiv">
+            <div>
+                <p>Welcome Back!</p>
+                <h3>Please Login to your account.</h3>
+                <fieldset>
+                    <form class="login-form">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" />
+                        <br /><br />
+                        <label for="Password">Password:</label>
+                        <input type="password" id="password" /><br /><br />
 
-</body>
+                        <br />
+                        <br />
+                        <div class="message"></div>
+                        <button type="Submit" class="submit-button">
+                            Login
+                        </button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        <script src="./JS/auth/cinemaAuth.js"></script>
+        <script src="./JS/auth/cinemaAuth_ui.js"></script>
+    </body>
 </html>

@@ -21,7 +21,7 @@ export class UserauthService {
       },
     );
 
-    return token;
+    return { usertoken: token };
   }
 
   async hashPassword(password: string) {

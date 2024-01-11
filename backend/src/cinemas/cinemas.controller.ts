@@ -29,7 +29,7 @@ export class CinemasController {
     private moviesService: MoviesService,
   ) {}
 
-  @Get('/whoami')
+  @Get('/current')
   @UseGuards(JwtAuthGuard)
   whoAmI(@Request() req) {
     return req.user;

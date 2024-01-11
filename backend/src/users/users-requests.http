@@ -15,13 +15,13 @@ POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-    "email" : "new@test.com",
-    "password": "new"
+    "email" : "b@b.com",
+    "password": "12"
 }
 
 ### Get the currently signed in user
-GET http://localhost:3000/users/whoami
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoibmV3IiwiZW1haWwiOiJuZXdAdGVzdC5jb20iLCJpYXQiOjE3MDQ5MjU4NTEsImV4cCI6MTcwNTAxMjI1MX0.TRMfipStc-RjKgRORXr_LN9F8QpT1aL-ZBD3-5Z5-S8
+GET http://localhost:3000/users/current
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI0LCJ1c2VybmFtZSI6ImIiLCJlbWFpbCI6ImJAYi5jb20iLCJpYXQiOjE3MDQ5ODk0ODUsImV4cCI6MTcwNTA3NTg4NX0.6a9MzxwJEYYZ4s0hNUWsGFX_uGdMwcgDtTkfKfecBQY
 
 
 
