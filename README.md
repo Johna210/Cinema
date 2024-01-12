@@ -6,6 +6,7 @@
 4. [Iman Ibrahim - UGR/1004/14](http://github.com/foziamohammed)
    
 This document provides an overview of the Cinemas web application, a web platform where users can discover and connect with cinemas, and cinemas can manage their movie listings and engage with moviegoers.
+
 ## Features:
 ### User Roles:
 ### Users:
