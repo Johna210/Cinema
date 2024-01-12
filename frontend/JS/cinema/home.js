@@ -127,7 +127,12 @@ function manage() {
 
                 location.reload();
             } else if (iconId.id === "edit") {
-                console.log(getInfo(iconId));
+                const info = getInfo(iconId);
+                const url = "movieupdate.html?";
+                const query = `id=${movieId.id}&title=${info.title}&genre=${info.genre}&showday=${info.showday}&showtime=${info.showtime}`;
+
+                const link = url + query;
+                location.href = link;
             }
         });
     }

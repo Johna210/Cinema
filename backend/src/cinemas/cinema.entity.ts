@@ -21,7 +21,7 @@ export class Cinema {
   @Column()
   password: string;
 
-  @Column()
+  @Column({ type: 'varchar', length: 10000 })
   description: string;
 
   @Column()

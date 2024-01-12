@@ -2,6 +2,25 @@ const myForm = document.getElementById("myForm");
 const inpFile = document.getElementById("cinema_image");
 const placeholder = document.querySelector(".img");
 const disc = document.querySelector(".disc");
+const logout = document.querySelector("#logout");
+const delAccount = document.querySelector("#Delete");
+
+if (logout) {
+    logout.addEventListener("click", function (e) {
+        e.preventDefault();
+        localStorage.removeItem("CINEMATOKEN");
+        window.location.href = "cinemaManagerLogin.html";
+    });
+}
+
+if (delAccount) {
+    delAccount.addEventListener("click", function (e) {
+        e.preventDefault();
+        deleteAcoount(localStorage.getItem("USERTOKEN"));
+        localStorage.removeItem("CINEMATOKEN");
+        window.location.href = "signin.html";
+    });
+}
 
 async function cinemaInfo() {
     try {

@@ -3,7 +3,6 @@ body {
     background-size: cover;
 }
 .login-form {
-    border: 1px solid red;
     background: transparent;
     border-radius: 30px;
     color: white;
@@ -26,8 +25,6 @@ body {
         align-items: center;
         gap: 25px;
 
-        border: 1px solid red;
-        
         label {
             font-size: 25px;
             width: 25%;
@@ -35,8 +32,6 @@ body {
             margin: 5px;
             margin-top: 15px;
         }
-
-        
 
         input {
             width: 60%;

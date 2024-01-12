@@ -121,6 +121,7 @@ export class CinemasController {
   @Patch('/updateMovie/:id')
   @UseGuards(JwtAuthGuard)
   updateMovie(@Param('id') id: string, @Body() body: UpdateMovieDto) {
+    console.log('updatedMovie');
     return this.moviesService.updateMovie(parseInt(id), body);
   }
 
