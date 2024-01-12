@@ -20,8 +20,9 @@ This document provides an overview of the Cinemas web application, a web platfor
 
 ### Cinemas:
 - Sign up and create a cinema profile
-- Post movie listings with details like title, synopsis, duration, and showtimes
-- Edit existing movie listings
+- Post movie listings with details like title, Images, duration, and showtimes
+- Upload cinema profile image.
+- Edit existing movie listings with title, new Image, showtime.
 - Delete posted movie listings
 - Access account settings and manage profile information
 - Delete their account
