@@ -15,8 +15,8 @@ POST http://localhost:3000/cinemas/signin
 Content-Type: application/json
 
 {
-    "email": "test@test.com",
-    "password": "1234"
+    "email": "y@y.com",
+    "password": "y"
 }
 
 ### Get the currently signed in Cinema
@@ -85,4 +85,4 @@ Content-Type: application/json
 
 ### Get all the movies posted by the cinema
 GET http://localhost:3000/cinemas/movies
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJjaW5lbWFOYW1lIjoiVGVzdDUiLCJlbWFpbCI6IlRlc3Q1IiwiaWF0IjoxNzA0ODM1NTMwLCJleHAiOjE3MDQ5MjE5MzB9.DRanf1DxISE2Ftz2wzwuyQuAEjj2w7r3B3avZhJxF1E
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImNpbmVtYU5hbWUiOiJ5IiwiZW1haWwiOiJ5IiwiaWF0IjoxNzA1MDY3MTQ0LCJleHAiOjE3MDUxNTM1NDR9.Wqnfc0ETtdmDcZLXEj11nz33-sFJStDRiDmdmr3qR7M
