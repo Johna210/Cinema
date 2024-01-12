@@ -28,7 +28,7 @@ This document provides an overview of the Cinemas web application, a web platfor
 
 ### Technology Stack:
 
-In this project we have used Html, Css and Javascript for the frontend and NestJs(a typescript framework) for the backend.
+In this project we have used Html, Css and Javascript for the frontend and NestJs(a typescript framework) for the backend and MySQL for the database.
 
 ### Getting Started:
 
