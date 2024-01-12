@@ -100,8 +100,6 @@ export class CinemasController {
     @Request() req,
     @UploadedFile() file: Express.Multer.File,
   ) {
-    console.log(body);
-
     const newMovie = await this.moviesService.createMovies(
       body.title,
       body.genre,
