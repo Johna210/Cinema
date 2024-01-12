@@ -1,29 +1,27 @@
-body{
+body {
     background-color: black;
+    height: 100vh;
 }
-header{
+header {
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 5%;
 }
-.user-nav{
-
-    display: flex;  
+.user-nav {
+    display: flex;
     gap: 20px;
     font-size: 150%;
     margin-right: 5%;
-    
 }
-.user-nav a{
+.user-nav a {
     text-decoration: none;
     color: white;
 }
-.user-nav a:hover{
-    
+.user-nav a:hover {
     color: red;
 }
-logo{
+logo {
     color: white;
     font-size: 30px;
 }
@@ -36,7 +34,7 @@ logo{
     border: none;
     cursor: pointer;
 }
-.dropbtn:hover{
+.dropbtn:hover {
     color: red;
 }
 
@@ -44,7 +42,7 @@ logo{
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -55,47 +53,56 @@ logo{
     text-decoration: none;
     display: block;
 }
-        
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.img-contianer{
+.img-contianer {
     display: flex;
     justify-content: center;
-   
-    
+    width: 80%;
 }
-.img{
-  
-    margin: 0 10%;
-    width: 60%;
-    height: 300px;
-}
-.disc{
+
+#container {
     color: white;
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.img {
+    margin: 0 10%;
+    width: 80%;
+    height: 300px;
+    align-self: center;
+}
+#description p {
+    color: white;
+}
+.disc {
+    color: white;
     margin: 5% 30% 0 30%;
     height: 150px;
 }
-h3{
+h3 {
     margin-top: 0;
     text-align: center;
 }
 
-@media only screen and (max-width: 760px){
-    header{
+@media only screen and (max-width: 760px) {
+    header {
         flex-direction: column;
         gap: 5px;
     }
-    logo{
+    logo {
         text-align: center;
     }
-    .user-nav, .dropbtn, logo {
+    .user-nav,
+    .dropbtn,
+    logo {
         font-size: small;
     }
-    .user-nav{
+    .user-nav {
         justify-content: space-between;
     }
     .dropdown-content a {

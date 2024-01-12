@@ -3,8 +3,6 @@ const inpFile = document.getElementById("cinema_image");
 const placeholder = document.querySelector(".img");
 const disc = document.querySelector(".disc");
 
-let isThere = false;
-
 async function cinemaInfo() {
     try {
         const response = await fetch("http://localhost:3000/cinemas/getpath", {

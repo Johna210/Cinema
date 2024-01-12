@@ -174,4 +174,11 @@ export class CinemasController {
   getCinema(@Param('id') id: string) {
     return this.cinemasService.findCinemaById(parseInt(id));
   }
+
+  @Get('/info/:id')
+  @UseGuards(JwtAuthGuard)
+  getInfo(@Param('id') id: string) {
+    console.log(id);
+    return this.cinemasService.findCinemaById(parseInt(id));
+  }
 }
