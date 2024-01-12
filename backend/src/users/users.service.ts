@@ -33,7 +33,6 @@ export class UsersService {
     }
 
     const hashedPassword = await this.authService.hashPassword(password);
-    console.log(hashedPassword);
     const user = this.repo.create({
       fullname,
       email,

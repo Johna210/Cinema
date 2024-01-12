@@ -83,6 +83,7 @@ export class MoviesService {
       day: movie.day,
       showTime: movie.showTime,
       imageUrl: movie.imageUrl,
+      cinemaId: movie.cinemaId,
     }));
   }
 }

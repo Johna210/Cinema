@@ -108,6 +108,9 @@ export class CinemasService {
     return this.repo.findOne({ where: { cinemaName: cinemaName } });
   }
 
+  findCinemaById(id: number) {
+    return this.repo.findOne({ where: { id: id } });
+  }
   // For updating CinemaName, email and description
   async update(id: number, attrs: Partial<Cinema>) {
     const cinema = await this.findOne(id);

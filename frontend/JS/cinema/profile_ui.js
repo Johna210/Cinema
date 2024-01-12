@@ -31,7 +31,6 @@ cinemaInfo().then((response) => {
         const relativePath = `http://localhost:5500/backend/src${imageResult.imagePath.slice(
             1
         )}`;
-        console.log(relativePath);
         placeholder.innerHTML = `<img src = ${relativePath} />`;
         let description = document.createElement("p");
         description.innerText = `${imageResult.description}`;

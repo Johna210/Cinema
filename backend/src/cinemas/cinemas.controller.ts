@@ -162,4 +162,16 @@ export class CinemasController {
   getAllCinemas() {
     return this.cinemasService.findCinemas();
   }
+
+  @Get('/allMovies')
+  @UseGuards(JwtAuthGuard)
+  getAllMovies() {
+    return this.moviesService.getAllMoveis();
+  }
+
+  @Get('view/:id')
+  @UseGuards(JwtAuthGuard)
+  getCinema(@Param('id') id: string) {
+    return this.cinemasService.findCinemaById(parseInt(id));
+  }
 }

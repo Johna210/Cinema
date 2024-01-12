@@ -91,3 +91,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImNpbmVtY
 ### Get all the cinemas
 GET http://localhost:3000/cinemas/findCinemas
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImNpbmVtYU5hbWUiOiJ5IiwiZW1haWwiOiJ5IiwiaWF0IjoxNzA1MDY3MTQ0LCJleHAiOjE3MDUxNTM1NDR9.Wqnfc0ETtdmDcZLXEj11nz33-sFJStDRiDmdmr3qR7M
+
+
+### Get all movies from all cinemas
+GET http://localhost:3000/cinemas/allMovies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImNpbmVtYU5hbWUiOiJ5IiwiZW1haWwiOiJ5IiwiaWF0IjoxNzA1MDY3MTQ0LCJleHAiOjE3MDUxNTM1NDR9.Wqnfc0ETtdmDcZLXEj11nz33-sFJStDRiDmdmr3qR7M
+
+
+### Get cinema by id
+GET http://localhost:3000/cinemas/view/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImNpbmVtYU5hbWUiOiJ5IiwiZW1haWwiOiJ5IiwiaWF0IjoxNzA1MDY3MTQ0LCJleHAiOjE3MDUxNTM1NDR9.Wqnfc0ETtdmDcZLXEj11nz33-sFJStDRiDmdmr3qR7M
