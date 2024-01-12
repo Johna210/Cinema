@@ -25,13 +25,11 @@ export class CinemasService {
     imagePath: string,
   ) {
     const cinemas = await this.findEmail(email);
-    console.log(cinemas);
     if (cinemas.length > 0) {
       throw new BadRequestException('email already taken!');
     }
 
     const cinemaNames = await this.findCinemaName(cinemaName);
-    console.log(cinemaNames);
     if (cinemaNames.length > 0) {
       throw new BadRequestException('cinemaName already taken');
     }
