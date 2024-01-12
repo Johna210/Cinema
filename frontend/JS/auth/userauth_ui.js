@@ -1,5 +1,24 @@
 const singup_form = document.querySelector(".add-form");
 const login_form = document.querySelector(".login-form");
+const logout = document.querySelector("#logout");
+const delAccount = document.querySelector("#Delete");
+
+if (logout) {
+    logout.addEventListener("click", function (e) {
+        e.preventDefault();
+        localStorage.removeItem("USERTOKEN");
+        window.location.href = "login.html";
+    });
+}
+
+if (delAccount) {
+    delAccount.addEventListener("click", function (e) {
+        e.preventDefault();
+        deleteAcoount(localStorage.getItem("USERTOKEN"));
+        localStorage.removeItem("USERTOKEN");
+        window.location.href = "signin.html";
+    });
+}
 
 const registerUser = async (
     fullname,
@@ -67,5 +86,3 @@ login_form?.addEventListener("submit", (e) => {
         document.getElementById("password").value
     );
 });
-
-checkStoredCreds();

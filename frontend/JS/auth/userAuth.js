@@ -51,3 +51,14 @@ const getLoggedUser = async (jwt_token) => {
 
     return await response.json();
 };
+
+const deleteAcoount = async (jwt_token) => {
+    const response = await fetch(`${BASEURL}/users/delaccount`, {
+        headers: {
+            Authorization: `Bearer ${jwt_token}`,
+        },
+        mode: "cors",
+    });
+
+    return await response.json();
+};

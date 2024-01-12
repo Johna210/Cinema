@@ -6,24 +6,29 @@
         <title>Document</title>
     </head>
     <link rel="stylesheet" href="./css/watchlist.css" />
+    <script
+        src="https://kit.fontawesome.com/01821c8375.js"
+        crossorigin="anonymous"
+    ></script>
     <body>
         <header>
             <nav class="user-nav">
                 <div class="user-home"><a href="userHome.html">HOME</a></div>
                 <a href="watchlist.html">My Watch List</a>
                 <div class="dropdown">
-                    <button class="dropbtn">
-                        <span>Account</span
-                        ><span class="dropdown-icon">&#x25BE;</span>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="login.html" onclick="return confirmLogout();"
+                    <div class="account">
+                        <a class="account-manage" id="logout"
+                            ><i
+                                class="fa-solid fa-right-from-bracket"
+                                style="color: #d41616"
+                            ></i
                             >Logout</a
                         >
-                        <a href="changepassword.html">Change Password</a>
-                        <a
-                            href="login.html"
-                            onclick="return confirmDeleteAccount();"
+                        <a class="account-manage" id="Delete"
+                            ><i
+                                class="fa-solid fa-user-minus"
+                                style="color: #cb1a1a"
+                            ></i
                             >Delete Account</a
                         >
                     </div>
@@ -34,5 +39,6 @@
         <div id="main"></div>
 
         <script src="./JS/user/watchlist.js"></script>
+        <script src="./JS/auth/userauth_ui.js"></script>
     </body>
 </html>

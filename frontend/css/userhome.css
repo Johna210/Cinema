@@ -131,6 +131,15 @@ logo {
     display: block;
 }
 
+.account {
+    display: flex;
+    gap: 15px;
+}
+
+.account {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 760px) {
     header {
         flex-direction: column;

@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="./css/userhome.css" />
+        <script
+            src="https://kit.fontawesome.com/01821c8375.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <header>
@@ -19,20 +23,19 @@
                 <!-- <div class="user-home"><a href="home">HOME</a></div> -->
                 <a href="watchlist.html">My Watch List</a>
                 <div class="dropdown">
-                    <button class="dropbtn">
-                        <span>Account</span
-                        ><span class="dropdown-icon">&#x25BE;</span>
-                    </button>
-                    <div class="dropdown-content">
-                        <a
-                            href="loginpage.html"
-                            onclick="return confirmLogout();"
+                    <div class="account">
+                        <a class="account-manage" id="logout"
+                            ><i
+                                class="fa-solid fa-right-from-bracket"
+                                style="color: #d41616"
+                            ></i
                             >Logout</a
                         >
-                        <a href="">Change Password</a>
-                        <a
-                            href="loginpage.html"
-                            onclick="return confirmDeleteAccount();"
+                        <a class="account-manage" id="Delete"
+                            ><i
+                                class="fa-solid fa-user-minus"
+                                style="color: #cb1a1a"
+                            ></i
                             >Delete Account</a
                         >
                     </div>
@@ -45,5 +48,6 @@
         <!-- <script src="script.js"></script> -->
         <script src="./JS/user/displayCinema.js"></script>
         <script src="./JS/user/home.js"></script>
+        <script src="./JS/auth/userauth_ui.js"></script>
     </body>
 </html>
