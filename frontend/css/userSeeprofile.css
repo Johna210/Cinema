@@ -1,0 +1,104 @@
+body{
+    background-color: black;
+}
+header{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+.user-nav{
+
+    display: flex;  
+    gap: 20px;
+    font-size: 150%;
+    margin-right: 5%;
+    
+}
+.user-nav a{
+    text-decoration: none;
+    color: white;
+}
+.user-nav a:hover{
+    
+    color: red;
+}
+logo{
+    color: white;
+    font-size: 30px;
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    /* padding: 10px; */
+    font-size: 26px;
+    border: none;
+    cursor: pointer;
+}
+.dropbtn:hover{
+    color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    font-size: 60%;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: block;
+}
+        
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.img-contianer{
+    display: flex;
+    justify-content: center;
+   
+    
+}
+.img{
+  
+    margin: 0 10%;
+    width: 60%;
+    height: 300px;
+}
+.disc{
+    color: white;
+    border: 1px solid red;
+    margin: 5% 30% 0 30%;
+    height: 150px;
+}
+h3{
+    margin-top: 0;
+    text-align: center;
+}
+
+@media only screen and (max-width: 760px){
+    header{
+        flex-direction: column;
+        gap: 5px;
+    }
+    logo{
+        text-align: center;
+    }
+    .user-nav, .dropbtn, logo {
+        font-size: small;
+    }
+    .user-nav{
+        justify-content: space-between;
+    }
+    .dropdown-content a {
+        font-size: 80%;
+    }
+}

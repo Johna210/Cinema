@@ -1,0 +1,66 @@
+body{
+    background-image: url('../images/photo_2024-01-12_11-38-39.jpg');
+    background-size: cover;
+}
+.login-form{
+    /* border: 1px solid red; */
+    background-color: white;
+    border-radius: 30px;
+
+    margin: 5% 30% 0 30%;
+    display: flex;
+    flex-direction: column;
+    
+    
+    h1{
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    div{
+        display: flex;
+        width: 100%;
+        margin-bottom: 10%;
+        
+        
+        label{
+            width: 25%;
+            text-align: end;
+            margin: 5px;
+            margin-top: 15px;
+        }
+
+        input{
+            width: 60%;
+            margin: 5px;
+            height: 30px;
+        }
+
+    }
+    .submit-button{
+        margin-bottom: 5%;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 20%;
+        height: 25px;
+        align-self: center;
+        background-color: green;
+    }
+   .submit-button:hover{
+        background-color: greenyellow;
+    }
+}
+.message{
+    justify-content: center;
+}
+
+p , h3{
+    color: white;
+    text-align: center;
+}
+@media only screen and (max-width: 760px){
+    
+    .login-form{
+        margin: 30% 5% 0 5%;
+    }
+}
