@@ -6,7 +6,7 @@ const dropDown = document.querySelector("#cinemas-drop");
 async function getMovies() {
     const response = await fetch(`${BASEURL}/cinemas/allMovies`, {
         headers: {
-            Authorization: `Bearer ${localStorage.getItem("CINEMATOKEN")}`,
+            Authorization: `Bearer ${localStorage.getItem("USERTOKEN")}`,
         },
         method: "GET",
         mode: "cors",
@@ -19,7 +19,7 @@ async function getMovies() {
 async function getCinemaName(id) {
     const response = await fetch(`${BASEURL}/cinemas/view/${id}`, {
         headers: {
-            Authorization: `Bearer ${localStorage.getItem("CINEMATOKEN")}`,
+            Authorization: `Bearer ${localStorage.getItem("USERTOKEN")}`,
         },
         method: "GET",
         mode: "cors",
@@ -33,7 +33,7 @@ async function addToWatchList(id) {
     const response = await fetch(`http://localhost:3000/users/add/${id}`, {
         method: "PATCH",
         headers: {
-            Authorization: `Bearer ${localStorage.getItem("CINEMATOKEN")}`,
+            Authorization: `Bearer ${localStorage.getItem("USERTOKEN")}`,
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -45,7 +45,6 @@ async function addToWatchList(id) {
 }
 getMovies().then((response) => {
     response.forEach((element) => {
-        console.log(element);
         getCinemaName(element.cinemaId).then((response) => {
             let box = document.createElement("div");
             box.classList = "box";
@@ -108,5 +107,6 @@ div.addEventListener("click", function (event) {
         // If the clicked element is a button with the class 'add'
         const movieId = event.target.dataset.movieId; // Get the movieId from the button's data attribute
         addToWatchList(movieId); // Call the function to add the movie to the watchlist
+        alert("Movie Added to watch list");
     }
 });

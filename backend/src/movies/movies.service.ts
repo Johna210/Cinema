@@ -41,8 +41,8 @@ export class MoviesService {
   }
 
   //to find the movie by its own id  we will use it in the update and remove funcitons
-  findMovieById(id: number) {
-    return this.moviesRepository.findOne({ where: { id } });
+  async findMovieById(id: number) {
+    return await this.moviesRepository.findOne({ where: { id } });
   }
 
   //to remove a movie by using its id

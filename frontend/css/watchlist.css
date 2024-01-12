@@ -1,11 +1,10 @@
-body{
-    background-color:black;
+body {
+    background-color: black;
 }
-h1{
-    
+h1 {
     text-align: center;
 }
-.box{
+.box {
     margin: 10px;
     width: 450px;
     /* height:30%; */
@@ -15,50 +14,50 @@ h1{
     display: flex;
     flex-direction: column;
 }
-.img{
+.img {
     width: 100%;
     height: 100%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-
-
 }
 
-.title, .showday, .time,.genre, .cinema{
-   
+.title,
+.showday,
+.time,
+.genre,
+.cinema {
     padding-left: 20px;
     height: 30px;
     font-size: 100%;
 }
-#main{
+#main {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-evenly ;
+    justify-content: space-evenly;
 }
-.button{
+.button {
     cursor: pointer;
-   margin-top: auto;
-   margin: 3px ;
-   background-color:red;
-   border-radius: 5px;
-   height: 30px;
-   font-size: 70%;
-   align-self: center;
+    margin-top: auto;
+    margin: 3px;
+    background-color: red;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 70%;
+    align-self: center;
+    width: 150px;
 }
-.button:hover{
+.button:hover {
     background-color: brown;
 }
-.imgbox{
+.imgbox {
     /* border: 1px solid blue; */
     height: 325px;
-    
 }
-.dir{
+.dir {
     display: flex;
     justify-content: space-around;
-
 }
-.bottom{
+.bottom {
     margin-top: auto;
     padding-top: 10px;
     display: flex;
@@ -66,35 +65,30 @@ h1{
     margin-bottom: 5px;
 }
 
+body {
+    background-color: black;
+}
 
-
-    body{
-        background-color: black;
-    }
-
-    header{
-                padding-top: 10px;
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 5%;
-            }
-.user-nav{
-
-    display: flex;  
+header {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+.user-nav {
+    display: flex;
     gap: 20px;
     font-size: 150%;
     margin-right: 5%;
-    
 }
-.user-nav a{
+.user-nav a {
     text-decoration: none;
     color: white;
 }
-.user-nav a:hover{
-    
+.user-nav a:hover {
     color: red;
 }
-logo{
+logo {
     color: white;
     font-size: 30px;
 }
@@ -107,7 +101,7 @@ logo{
     border: none;
     cursor: pointer;
 }
-.dropbtn:hover{
+.dropbtn:hover {
     color: red;
 }
 
@@ -115,7 +109,7 @@ logo{
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -127,27 +121,27 @@ logo{
     display: block;
 }
 
-
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-@media only screen and (max-width: 760px){
-            header{
-                flex-direction: column;
-                gap: 5px;
-            }
-            logo{
-                text-align: center;
-            }
-            .user-nav, .dropbtn, logo {
-                font-size: small;
-            }
-            .user-nav{
-                justify-content: space-between;
-            }
-            .dropdown-content a {
-                font-size: 80%;
-            }
-        }
+@media only screen and (max-width: 760px) {
+    header {
+        flex-direction: column;
+        gap: 5px;
+    }
+    logo {
+        text-align: center;
+    }
+    .user-nav,
+    .dropbtn,
+    logo {
+        font-size: small;
+    }
+    .user-nav {
+        justify-content: space-between;
+    }
+    .dropdown-content a {
+        font-size: 80%;
+    }
+}

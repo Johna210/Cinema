@@ -1,71 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<link rel="stylesheet" href="./css/watchlist.css">
-<body>
-    <header>
-        <logo></logo>
-        <nav class="user-nav">
-            <div class="user-home"><a href="userHome.html">HOME</a></div>
-            <a href="watchlist.html">My Watch List</a>  
-            <a href="userseeprofile.html">Cinema Profile</a> 
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <span>Account</span><span class="dropdown-icon">&#x25BE;</span>
-                </button>
-                <div class="dropdown-content">
-                    <a href="login.html" onclick="return confirmLogout();">Logout</a>
-                    <a href="changepassword.html">Change Password</a>
-                    <a href="login.html" onclick="return confirmDeleteAccount();">Delete Account</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <link rel="stylesheet" href="./css/watchlist.css" />
+    <body>
+        <header>
+            <nav class="user-nav">
+                <div class="user-home"><a href="userHome.html">HOME</a></div>
+                <a href="watchlist.html">My Watch List</a>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <span>Account</span
+                        ><span class="dropdown-icon">&#x25BE;</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html" onclick="return confirmLogout();"
+                            >Logout</a
+                        >
+                        <a href="changepassword.html">Change Password</a>
+                        <a
+                            href="login.html"
+                            onclick="return confirmDeleteAccount();"
+                            >Delete Account</a
+                        >
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <div id="main">
-        <div class="box">
-            <div class="imgbox"><img class="img" src="solo leveling.png" alt=""></div>
-            <div class="bottom">
-                <div class="title">title: black panter</div>
-                <div class="genre">Genre: gener</div>
-                <div class="showday">showday: monday</div>
-                <div class="time">showtime: 09:43 AM</div>
-                <div class="cinema">Cinema: CinemaName</div>
-            </div>
-           
+        <div id="main"></div>
 
-            <button  type="button" class="button"> Remove from watchlist</button>
-        </div>
-        
-        <div class="box">
-            <div class="imgbox"><img class="img" src="data:image/jpeg;base64,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" alt=""></div>
-            <div class="bottom">
-                <div class="title">title: black panter</div>
-                <div class="genre">Genre: gener</div>
-                <div class="showday">showday: monday</div>
-                <div class="time">showtime: 09:43 AM</div>
-                <div class="cinema">Cinema: CinemaName</div>
-            </div>
-            
-
-            <button type="button" class="button"> Remove from watchlist</button>
-        </div>
-    </div>
-
-    <script>
-        const addButton = document.getElementsByClassName('button');
-        addButton.addEventListener('click', function() {
-
-            addToWatchList();
-        });
-        function addToWatchList() {
-            
-            alert('Movie added to watch list');
-        }
-    </script>
-</body>
+        <script src="./JS/user/watchlist.js"></script>
+    </body>
 </html>
