@@ -148,4 +148,11 @@ export class CinemasController {
       body.newPassword,
     );
   }
+
+  @Get('/getpath')
+  @UseGuards(JwtAuthGuard)
+  getImagePath(@Request() req) {
+    const cinema = req.user;
+    return this.cinemasService.findOne(cinema.sub);
+  }
 }

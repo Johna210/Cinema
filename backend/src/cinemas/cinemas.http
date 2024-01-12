@@ -20,8 +20,14 @@ Content-Type: application/json
 }
 
 ### Get the currently signed in Cinema
-GET http://localhost:3000/cinemas/whoami
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJjaW5lbWFOYW1lIjoiVGVzdDUiLCJlbWFpbCI6IlRlc3Q1IiwiaWF0IjoxNzA0ODM1NTMwLCJleHAiOjE3MDQ5MjE5MzB9.DRanf1DxISE2Ftz2wzwuyQuAEjj2w7r3B3avZhJxF1E
+GET http://localhost:3000/cinemas/current
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNpbmVtYU5hbWUiOiJBbGVtIENpbmVtYSIsImVtYWlsIjoiQWxlbSBDaW5lbWEiLCJpYXQiOjE3MDUwNTQ5NjgsImV4cCI6MTcwNTE0MTM2OH0.muf6nHkplErc8LIpVHSy_d805O1lp9G1PvXGuQ_7X3o
+
+
+### Get cinema info
+GET http://localhost:3000/cinemas/getpath
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNpbmVtYU5hbWUiOiJBbGVtIENpbmVtYSIsImVtYWlsIjoiQWxlbSBDaW5lbWEiLCJpYXQiOjE3MDUwNTQ5NjgsImV4cCI6MTcwNTE0MTM2OH0.muf6nHkplErc8LIpVHSy_d805O1lp9G1PvXGuQ_7X3o
+
 
 
 ### Delete the currently logedin user
