@@ -1,0 +1,47 @@
+body{
+    background-image: url('../images/landing.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+    font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 96vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+   
+    
+}
+
+.landing{
+    margin-bottom: 10%;
+    margin-right: 10%;
+    h1{
+        font-size: 300%;
+    }
+    a{
+        font-size: 200%;
+        color:white;
+        cursor: pointer;
+        text-decoration: none;
+        
+    }
+    a:hover{
+        color: black;
+    }
+
+
+    
+}
+@media screen and (max-width: 759px) {
+    body{
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+    
+}

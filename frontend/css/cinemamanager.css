@@ -2,9 +2,12 @@
 body{
     background-image: url('../images/photo_2024-01-12_11-38-39.jpg');
     background-size: cover;
+    font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
 }
 header{
     display: flex;
+    font-family: 'Helvetica', sans-serif;
 
 }
 nav{
@@ -24,6 +27,7 @@ a:hover{
     color: red;
 }
 .add-form{
+    font-family:'Arial', sans-serif;
                 
     display: flex;
     flex-direction: column;
@@ -41,6 +45,7 @@ a:hover{
             width: 30%;
             text-align: center;
             
+            
         }
         input{
             
@@ -49,7 +54,6 @@ a:hover{
         }
         textarea{
             width: 50%;
-            
         }
     }
 }

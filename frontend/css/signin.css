@@ -2,6 +2,7 @@ body{
     background-image: url('../images/photo_2024-01-12_11-38-39.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
 }
 
 header{

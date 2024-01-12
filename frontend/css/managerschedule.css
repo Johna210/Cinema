@@ -66,6 +66,7 @@ h1 {
 }
 body {
     background-color: black;
+    font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
 }
 
 header {
@@ -73,6 +74,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5%;
+    font-family: 'Arial', sans-serif;
 }
 .user-nav {
     display: flex;

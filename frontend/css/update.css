@@ -1,6 +1,7 @@
 body{
     background: rgb(2,1,1);
     background: linear-gradient(90deg, rgba(2,1,1,1) 5%, rgba(145,12,12,1) 41%, rgba(150,14,14,1) 66%, rgba(0,0,0,1) 100%);
+    font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
 }
 
 
@@ -76,6 +77,9 @@ logo{
     header{
         flex-direction: column;
         gap: 5px;
+    }
+    .user-nav{
+        font-size: 125%
     }
     logo{
         text-align: center;

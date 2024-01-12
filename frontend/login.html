@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Login</title>
+        <title>User login</title>
         <link rel="stylesheet" href="./css/login.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+
     </head>
     <body class="loginBody">
         <div class="loginDiv">
@@ -15,25 +17,23 @@
                 <form class="login-form">
                     <h1>Log in</h1>
                     <div class="comdiv">
-                        <h3>Email:</h3>
+                        <label for="email">Email:</label>
                         <input
                             type="email"
-                            id="email"
-                            placeholder="Enter your email"
+                            id="email" placeholder="Enter your email"
                         />
                     </div>
                     <div class="comdiv">
-                        <h3>Password:</h3>
+                        <label for="password">Password:</label>
                         <input
                             type="password"
-                            id="password"
-                            placeholder="Enter your password"
+                            id="password" placeholder="Enter your password"
                         />
                     </div>
 
                     <div class="message"></div>
 
-                    <button type="Submit" class="submit-button">Login</button>
+                    <button type="Submit" class="submit-button">Log in</button>
                 </form>
             </div>
         </div>
