@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    color: white;
 }
 header {
     padding-top: 10px;
@@ -25,37 +26,6 @@ logo {
     font-size: 30px;
 }
 
-.dropbtn {
-    background-color: black;
-    color: white;
-    /* padding: 10px; */
-    font-size: 26px;
-    border: none;
-    cursor: pointer;
-}
-.dropbtn:hover {
-    color: red;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: white;
-    font-size: 60%;
-    /* padding: 12px 16px; */
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 .img {
     display: flex;
@@ -70,13 +40,16 @@ logo {
     color: white;
     border: 1px solid white;
     margin: 5% 30% 0 30%;
-    height: 150px;
+    height: auto;
     padding-left: 5px;
+    word-wrap: break-word;
 }
 h3 {
     margin-top: 0;
     text-align: center;
 }
+
+
 
 @media only screen and (max-width: 760px) {
     header {
@@ -94,7 +67,24 @@ h3 {
     .user-nav {
         justify-content: space-between;
     }
-    .dropdown-content a {
-        font-size: 80%;
+
+    .img{
+        padding-top: 50px;
+        .profile-form{
+            display: flex;
+            
+
+            button{
+                width: 50%;
+            }
+        }
+    }
+    .disc{
+        padding: 0;
+        margin: 30px 0 0 0;
+
+        width: 95%;
+        height: auto;
     }
 }
+

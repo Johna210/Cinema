@@ -3,7 +3,7 @@ body {
     background-size: cover;
 }
 .login-form {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     background: transparent;
     border-radius: 30px;
     color: white;
@@ -18,30 +18,28 @@ body {
         text-align: center;
         margin-bottom: 10%;
     }
-    div {
+    .comdiv {
         display: flex;
         width: 100%;
         margin-bottom: 10%;
         justify-content: center;
         align-items: center;
         gap: 25px;
-        color: red;
 
+        border: 1px solid red;
+        
         label {
+            font-size: 25px;
             width: 25%;
             text-align: end;
             margin: 5px;
             margin-top: 15px;
         }
 
-        #email {
-            margin-left: 17px;
-        }
+        
 
         input {
             width: 60%;
-            /* align-self: center; */
-            /* margin: auto; */
             height: 30px;
         }
     }
