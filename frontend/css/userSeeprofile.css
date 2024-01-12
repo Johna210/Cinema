@@ -61,9 +61,16 @@ logo{
     display: block;
 }
 
+.img-contianer{
+    display: flex;
+    justify-content: center;
+   
+    
+}
 .img{
+  
     margin: 0 10%;
-    width: 80%;
+    width: 60%;
     height: 300px;
 }
 .disc{

@@ -4,101 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/userhome.css">
 </head>
-
-    <body class="user-home">
-        <header>
-            <logo>Century Cinema</logo>
-            <nav class="user-nav">
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        <span>Home</span><span class="dropdown-icon">&#x25BE;</span>
-                    </button>
-                    <div class="dropdown-content">
-                       <a href="userHome.html">Century Cinema</a>
-                       <a href="userhome2.html">Gast Cinema</a>
-                    </div>
-                </div>
-                <a href="watchlist.html">My Watch List</a>  
-                <a href="userlink.html">Cinema Profile</a> 
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        <span>Account</span><span class="dropdown-icon">&#x25BE;</span>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="logout.html" onclick="return confirmLogout();">Logout</a>
-                        <a href="changepassword.html">Change Password</a>
-                        <a href="deleteaccount.html" onclick="return confirmDeleteAccount();">Delete Account</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-    <main>
-       
-        <div class="main-div">
-            <div class="header-image">
-                <p>MONDAY</p>
-                <div class="movie-container">
-                    <img src="images/lion king.jpg" alt="" class="top-image">
-<div class="description">
-Title: The Lion King<br>
-Show Time: 05:00AM<br>
-Genre: Adventure</div><br>
-<button id="add-button" class="add-button">Add to Watch List</button>
-                    
-                </div>
+<header>
+    <logo></logo>
+    <nav class="user-nav">
+        
+        <div class="dropdown">
+            <button class="dropbtn">
+                <span>Home</span><span class="dropdown-icon">&#x25BE;</span>
+            </button>
+            <div class="dropdown-content">
+               <a href="userHome.html">Century Cinema</a>
+               <a href="userhome2.html">Gast Cinema</a>
             </div>
-        <div class="sub-div">
-            <div class="movie-container">
-           <img src="images/famous-movie-posters-of-All-time-Hollywood-20.jpg" alt="" class="images" width="300px" height="300px">
-<div class="description">
-Title:The Hunger Games<br>
-Show Time:05:00AM<br>
-Genre:Adventure</div>
-<button id="add-button" class="add-button ">Add to Watch List</button>
-</div>
-<div class="movie-container">
-           <img src="images/best-worst-movie-posters-2009-avatar-39526.jpg" alt="" class="images" width="300px" height="300px">
-<div class="description">
-Title:Avatar<br> 
-Show Time:06:00AM<br>
-Genre:Adventure</div>
-<button class="add-button">Add to Watch List</button></div>
-<div class="movie-container">
-           <img src="images/images (1).jpg" alt="" class="images" width="300px" height="300px">
-<div class="description">
-Title:Black Panther<br>
-Show Time:07:00AM<br>
-Genre:Adventure</div>
-<button class="add-button">Add to Watch List</button></div>
         </div>
-        <br> <br> <br>
-        <div class="main-div">
-            <div class="header-image">
-                <p>TUESDAY</p>
-                <div class="movie-container">
-                <img src="images/lion king.jpg" alt="" class="top-image2">
-                <div class="description">Title:The Lion King<br> Show Time:05:00AM<br> Genre:Adventure</div><br>
-                <button class="add-button">Add to Watch List</button></div>
+        <!-- <div class="user-home"><a href="home">HOME</a></div> -->
+        <a href="watchlist.html">My Watch List</a>  
+        <a href="userseeprofile.html">Cinema Profile</a> 
+        <div class="dropdown">
+            <button class="dropbtn">
+                <span>Account</span><span class="dropdown-icon">&#x25BE;</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="loginpage.html" onclick="return confirmLogout();">Logout</a>
+                <a href="">Change Password</a>
+                <a href="loginpage.html" onclick="return confirmDeleteAccount();">Delete Account</a>
             </div>
-            
-            <div class="sub-divs">
-                <div class="movie-container">
-               <img src="images/Elemental-Bench-Payoff-Poster.jpg" alt="" class="image" width="300px" height="300px">
-               <div class="description">Title:Elemental<br> Show Time:05:00AM<br> Genre:Adventure</div>
-               <button class="add-button">Add to Watch List</button></div>
-               <div class="movie-container">
-               <img src="images/best-worst-movie-posters-2009-avatar-39526.jpg" class="image" alt="" width="300px" height="300px">
-               <div class="description">Title:Avatar<br> Show Time:05:00AM<br> Genre:Adventure</div>
-               <button class="add-button">Add to Watch List</button></div>
-               <div class="movie-container">
-               <img src="images/images (1).jpg" alt="" class="image" width="300px" height="300px">
-               <pre class="description"> Title:Black Panther <br> Show Time:05:00AM<br> Genre:Adventure</pre>
-               <button class="add-button">Add to Watch List</button></div>
-            </div>
-    </main>
+        </div>
+    </nav>
+</header>
+
+
+</div>
+<div id="main">
+    <div class="box">
+        <div class="imgbox"><img class="img" src="" alt=""></div>
+        <div class="bottom">
+            <div class="title">title: black panter</div>
+            <div class="genre">Genre: gener</div>
+            <div class="showday">showday: monday</div>
+            <div class="time">showtime: 09:43 AM</div>
+            <div class="cinema">Cinema: CinemaName</div>
+        </div>
+       
+
+        <button type="button" class="button" onclick="alert('added to watchlist')"> Add TO WatchList</button>
+    </div>
+    
+    
+
+
     <script src="script.js">
 
     </script>

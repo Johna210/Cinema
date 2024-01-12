@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="./css/profile.css" />
         <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -12,22 +12,36 @@
     </head>
     <body class="profile-body">
         <header>
-            <logo>Century Cinema</logo>
+            <logo></logo>
             <nav class="user-nav">
-                <a href="mangerhome.html">Schedule</a>
-                <a href="cinemaMovieAdd.html">Add movie</a>
-                <a href="cinema-profile.html">Profile</a>
+                <div class="user-home"><a href="managerhome.html">SCHEDULE</a></div>
+                <a href="cinemaMovieAdd.html">ADD MOVIE</a>  
+                <a href="profile.html">PROFILE</a> 
+                
             </nav>
-        </header>
-        <main class="profile-main">
-            <h1 class="manager-h1">Manager Profile</h1>
 
-            <form id="myForm" class="profile-form">
-                <label for="cinema_image">Cinema Image:</label>
-                <input type="file" id="cinema_image" name="cinema_image" />
-                <button type="submit">Post Image</button>
-            </form>
-        </main>
+            
+
+           
+        </header>
+
+        <div class="img">
+                <!-- <img src=""> -->
+                <!-- <form id="myForm" class="profile-form">
+                    <label for="cinema_image">Cinema Image:</label>
+                    <input type="file" id="cinema_image" name="cinema_image" />
+                    <button type="submit">Post Image</button>
+                </form> -->
+            </div>
+        
+            <div class="disc">
+                <h3>Description</h3>
+                <p>Description</p>
+                
+      
+            
+
+           
         <script src="./JS/cinema/profile.js"></script>
         <script src="./JS/cinema/profile_ui.js"></script>
     </body>

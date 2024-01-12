@@ -61,12 +61,20 @@ logo{
     display: block;
 }
 
+
 .img{
-    margin: 0 10%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+
+}
+.img img{
     width: 80%;
     height: 300px;
 }
 .disc{
+   
     color: white;
     border: 1px solid white;
     margin: 5% 30% 0 30%;
