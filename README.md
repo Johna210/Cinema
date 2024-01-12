@@ -6,30 +6,30 @@
 4. [Iman Ibrahim - UGR/1004/14](http://github.com/foziamohammed)
    
 This document provides an overview of the Cinemas web application, a web platform where users can discover and connect with cinemas, and cinemas can manage their movie listings and engage with moviegoers.
-##Features:
-###User Roles:
-###Users:
-Sign up and create a profile
-Browse listed movies from various cinemas
-Add movies to their watchlist for later viewing
-View and manage existing watchlist entries
-View cinema details and contact information
-Access account settings and manage profile information
-Delete their account
+## Features:
+### User Roles:
+### Users:
+- Sign up and create a profile
+- Browse listed movies from various cinemas
+- Add movies to their watchlist for later viewing
+- View and manage existing watchlist entries
+- View cinema details and contact information
+- Access account settings and manage profile information
+- Delete their account
 
-###Cinemas:
-Sign up and create a cinema profile
-Post movie listings with details like title, synopsis, duration, and showtimes
-Edit existing movie listings
-Delete posted movie listings
-Access account settings and manage profile information
-Delete their account
+### Cinemas:
+- Sign up and create a cinema profile
+- Post movie listings with details like title, synopsis, duration, and showtimes
+- Edit existing movie listings
+- Delete posted movie listings
+- Access account settings and manage profile information
+- Delete their account
 
-###Technology Stack:
+### Technology Stack:
 
 In this project we have used Html, Css and Javascript for the frontend and NestJs(a typescript framework) for the backend.
 
-###Getting Started:
+### Getting Started:
 
 Visit the Cinemas web application at (your website URL).
 Click on "Sign Up" to create an account for your desired role (user or cinema).
