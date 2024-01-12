@@ -21,7 +21,7 @@ getMovies().then((response) => {
         box.id = "movie";
         box.classList = "box";
         let imgbox = document.createElement("div");
-        imgbox.classList = "img";
+        imgbox.classList = "imgBox";
         let bottom = document.createElement("div");
         bottom.classList = "bottom";
 

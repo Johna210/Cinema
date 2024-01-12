@@ -30,6 +30,7 @@ async function getCinemaName(id) {
 }
 
 async function addToWatchList(id) {
+    console.log(id);
     const response = await fetch(`http://localhost:3000/users/add/${id}`, {
         method: "PATCH",
         headers: {
@@ -40,8 +41,8 @@ async function addToWatchList(id) {
             movieId: id,
         }),
     });
-    const data = await response.json();
-    return data;
+    // const data = await response.json();
+    // return data;
 }
 getMovies().then((response) => {
     response.forEach((element) => {
@@ -49,7 +50,7 @@ getMovies().then((response) => {
             let box = document.createElement("div");
             box.classList = "box";
             let imgbox = document.createElement("div");
-            imgbox.classList = "img";
+            imgbox.classList = "imgBox";
             let bottom = document.createElement("div");
             bottom.classList = "bottom";
 
@@ -72,7 +73,20 @@ getMovies().then((response) => {
 
             let cinemaName = document.createElement("div");
             cinemaName.classList = "cinemaName";
-            cinemaName.innerHTML = `<a href="userseeprofile.html?id=${response.id}">${response.cinemaName}</a>`;
+
+            let cinemaIcon = document.createElement("i");
+            cinemaIcon.classList = "fa-solid fa-film";
+            cinemaName.appendChild(cinemaIcon);
+
+            let linkCinema = `userseeprofile.html?id=${response.id}`;
+            let name = document.createElement("a");
+            name.style.textDecoration = "none";
+            name.href = linkCinema;
+            name.textContent = `${response.cinemaName}`;
+
+            cinemaName.appendChild(name);
+            cinemaName.style.display = "flex";
+            cinemaName.style.gap = "10px";
             // cinemaName.textContent = `${response.cinemaName}`;
 
             let btn = document.createElement("button");
@@ -105,9 +119,8 @@ getMovies().then((response) => {
 
 div.addEventListener("click", function (event) {
     if (event.target.classList.contains("add")) {
-        // If the clicked element is a button with the class 'add'
-        const movieId = event.target.dataset.movieId; // Get the movieId from the button's data attribute
-        addToWatchList(movieId); // Call the function to add the movie to the watchlist
+        const movieId = event.target.dataset.movieId;
+        addToWatchList(movieId);
         alert("Movie Added to watch list");
     }
 });

@@ -13,7 +13,7 @@ export class WatchlistService {
   // To create watchlist using the userId and movieId as parameter
   async createWatchList(userId: number, movieId: number) {
     const movies = await this.getMovieId(movieId);
-    if (!movies) {
+    if (movies.length === 0) {
       const watchList = this.watchListRepository.create({ userId, movieId });
       return this.watchListRepository.save(watchList);
     }

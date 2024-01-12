@@ -92,9 +92,10 @@ window.onload = getWatchList().then((response) => {
 
 main.addEventListener("click", function (event) {
     if (event.target.classList.contains("remove")) {
-        // If the clicked element is a button with the class 'add'
-        const movieId = event.target.dataset.movieId; // Get the movieId from the button's data attribute
-        remove(movieId); // Call the function to add the movie to the watchlist
-        location.reload();
+        if (confirm("Are you sure? ")) {
+            const movieId = event.target.dataset.movieId;
+            remove(movieId);
+            location.reload();
+        }
     }
 });
