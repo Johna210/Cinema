@@ -163,6 +163,10 @@ export class CinemasService {
 
     return this.repo.save(cinema);
   }
+  // FindAll cinemas
+  async findCinemas() {
+    return this.repo.find();
+  }
 
   // addMovie() {}
 

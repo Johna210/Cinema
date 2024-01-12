@@ -21,6 +21,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { MoviesService } from '../movies/movies.service';
 import { UpdateMovieDto } from '../movies/dto/update-movie.dto';
+import { jwtConstants } from 'src/auth/constants';
 
 @Controller('cinemas')
 export class CinemasController {
@@ -154,5 +155,11 @@ export class CinemasController {
   getImagePath(@Request() req) {
     const cinema = req.user;
     return this.cinemasService.findOne(cinema.sub);
+  }
+
+  @Get('/findCinemas')
+  @UseGuards(JwtAuthGuard)
+  getAllCinemas() {
+    return this.cinemasService.findCinemas();
   }
 }
