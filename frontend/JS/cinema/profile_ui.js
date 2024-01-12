@@ -22,6 +22,17 @@ if (delAccount) {
     });
 }
 
+const deleteAcoount = async (jwt_token) => {
+    const response = await fetch(`${BASEURL}/cinemas/delaccount`, {
+        headers: {
+            Authorization: `Bearer ${jwt_token}`,
+        },
+        mode: "cors",
+    });
+
+    return await response.json();
+};
+
 async function cinemaInfo() {
     try {
         const response = await fetch("http://localhost:3000/cinemas/getpath", {

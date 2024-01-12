@@ -11,10 +11,12 @@ export class WatchlistService {
   ) {}
 
   // To create watchlist using the userId and movieId as parameter
-  createWatchList(userId: number, movieId: number) {
-    const watchList = this.watchListRepository.create({ userId, movieId });
-
-    return this.watchListRepository.save(watchList);
+  async createWatchList(userId: number, movieId: number) {
+    const movies = await this.getMovieId(movieId);
+    if (!movies) {
+      const watchList = this.watchListRepository.create({ userId, movieId });
+      return this.watchListRepository.save(watchList);
+    }
   }
   // returns the userId from the database and this will be used to get watchlist by userID
   getUserId(userId: number) {

@@ -14,11 +14,24 @@ if (logout) {
 if (delAccount) {
     delAccount.addEventListener("click", function (e) {
         e.preventDefault();
-        deleteAcoount(localStorage.getItem("USERTOKEN"));
+        console.log(localStorage.getItem("USERTOKEN"));
+
+        deleteAccount(localStorage.getItem("USERTOKEN"));
         localStorage.removeItem("USERTOKEN");
         window.location.href = "signin.html";
     });
 }
+const deleteAccount = async (jwt_token) => {
+    const response = await fetch(`${BASEURL}/users/delaccount`, {
+        headers: {
+            Authorization: `Bearer ${jwt_token}`,
+        },
+        method: "DELETE",
+        mode: "cors",
+    });
+
+    return await response.json();
+};
 
 const registerUser = async (
     fullname,

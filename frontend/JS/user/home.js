@@ -73,6 +73,7 @@ getMovies().then((response) => {
             let cinemaName = document.createElement("div");
             cinemaName.classList = "cinemaName";
             cinemaName.innerHTML = `<a href="userseeprofile.html?id=${response.id}">${response.cinemaName}</a>`;
+            // cinemaName.textContent = `${response.cinemaName}`;
 
             let btn = document.createElement("button");
             btn.id = `add-${element.id}`;

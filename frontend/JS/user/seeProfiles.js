@@ -14,7 +14,7 @@ async function cinemaInfo(id) {
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem(
-                        "CINEMATOKEN"
+                        "USERTOKEN"
                     )}`,
                 },
                 method: "GET",
@@ -37,7 +37,9 @@ cinemaInfo(cinemaId).then((response) => {
     )}`;
     container.innerHTML = `<img class="img" src = ${relativePath} />`;
     let desc = document.createElement("p");
+    console.log(response.description);
     desc.innerText = `${response.description}`;
+
     console.log(desc);
 
     description.appendChild(desc);
