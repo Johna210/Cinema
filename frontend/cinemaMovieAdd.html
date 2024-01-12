@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="cinemaAdd">
-    <header>
-        <logo>Century Cinema</logo>
-        <nav class="user-nav">
-            <a href="mangerhome.html">Schedule</a>
-            <a href="cinemaMovieAdd.html" class="active">Add Movie</a>
-            <a href="cinema-profile.html">Profile</a>
-        </nav>
-    </header>
-    <main>
-   
-        <form class="add-form">
-            <label for="title"> Title:</label>
-            <input type="text" id="title">
-           <br>
-           <br>
-           <label for="genre">Genre:</label>
-            <input type="text" id="genre"><br><br>
-            <label for="date">Date:</label>
-            <input type="text" id="date" placeholder="DD/MM/YY">
-            <br><br>
-            <label for="showTime">Show Time:</label>
-            <input type="text" id="showTime"><br><br>
-            <label for="imageUpload">Upload Image:</label>
-            <input type="file" id="imageUpload" name="imageUpload">
-            
-            <br>
-            <br>
-            
-            <button type="Submit" class="submit-button">Add</button>
-            
-      
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="cinemaAdd">
+        <header>
+            <logo></logo>
+            <nav class="user-nav">
+                <a href="mangerhome.html">Schedule</a>
+                <a href="cinemaMovieAdd.html" class="active">Add Movie</a>
+                <a href="cinema-profile.html">Profile</a>
+            </nav>
+        </header>
+        <main>
+            <form id="add-form">
+                <label for="title"> Title:</label>
+                <input type="text" id="title" />
+                <br />
+                <br />
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" /><br /><br />
+                <label for="date">Date:</label>
+                <input type="text" id="date" placeholder="DD/MM/YY" />
+                <br /><br />
+                <label for="showTime">Show Time:</label>
+                <input type="text" id="showTime" /><br /><br />
+                <label for="imageUpload">Upload Image:</label>
+                <input type="file" id="imageUpload" name="imageUpload" />
 
-    </main>
-</body>
+                <br />
+                <br />
+
+                <button type="Submit">Add</button>
+            </form>
+        </main>
+
+        <script src="./JS/cinema/addMovie.js"></script>
+    </body>
 </html>

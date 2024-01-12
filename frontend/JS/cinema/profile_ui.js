@@ -6,7 +6,6 @@ myForm.addEventListener("submit", (e) => {
 
     const endpoint = "http://localhost:3000/cinemas/image";
     const formData = new FormData();
-    // console.log(inpFile.files);
 
     formData.append("file", inpFile.files[0]);
 
